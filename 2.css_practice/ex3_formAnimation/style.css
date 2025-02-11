@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #e5e5e5;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    /* border: black 2px solid; */
+    height: 80%;
+    width: 50%;
+    max-width: 500px;
+    border-radius: 1%;
+    background: #fff;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+h1{
+    /* background: #b37f7f; */
+    height: 10%;
+    padding: 3%;
+    margin-bottom: 10px;
+    transition: all cubic-bezier(0.19, 1, 0.22, 0.21) 1s ;
+}
+h1:hover{
+    transform: scale(1.1,5);
+    
+}
+
+.inputs{
+    /* background-color: antiquewhite; */
+    height: 35%;
+    /* padding: 20px; */
+}
+
+.inputs div{
+    /* background-color: #fff; */
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inputs div input{
+    font-size: large;
+    padding: 10px;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 5px;
+    background: transparent;
+
+}
+
+.inputs div input:focus{
+    outline: none;
+}
+
+
+
+.msg{
+    height: 40%;
+    /* margin: 20px; */
+    /* margin-top: 0; */
+    /* background-color: #e8b3b3; */
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.msg textarea{
+    height: 80%;
+    resize: none;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 5px;
+    font-size: large;
+    padding: 10px;
+    background: transparent;
+}
+.msg textarea:focus{
+    outline: none;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    border: none;
+    font-size: large;
+    padding: 10px;
+    /* margin: 20px; */
+    /* margin-top: 0; */
+    width: 100%;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all cubic-bezier(0.19, 1, 0.22, 0.5) 0.5s;
+}
+button:hover{
+    background-color: rgb(62, 62, 253);
+}
