@@ -5,32 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pintrest</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <style>
-      @import url(../fonts/Satoshi/satoshi.css);
-      @import url(../fonts/Syne/stylesheet.css);
-
-      @keyframes marquee {
-        0% {
-          transform: translateX(0%);
-        }
-
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
-      .marqee {
-        animation: marquee 15s cubic-bezier(0.19, 0.5, 0.22, 0.5) infinite both;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <main class="border m-4 px-12">
+    <main class="border m-2 md:m-4 px-4 md:px-8 xl:px-12">
       <!-- section 1 navbar -->
-      <section id="sec1">
+      <section>
         <nav
-          class="border-b py-8 font-[Satoshi] flex justify-between items-center"
+          class="border-b py-4 md:py-6 xl:py-8 font-[Satoshi] flex justify-between items-center"
         >
           <div class="logo font-medium text-3xl flex gap-5 items-center">
             <img
@@ -40,29 +23,30 @@
             />
             <h1>FYLLA</h1>
           </div>
-          <div class="rightPart flex gap-4">
-            <div id="links " class="text-xl flex gap-10 items-center uppercase">
-              <a class="duration-300 ease-in hover:underline" href=""
+          <div class="rightPart flex items-center gap-4">
+            <div id="links " class="md:text-lg xl:text-xl gap-10 items-center uppercase hidden xl:flex">
+              <a class="duration-300 ease-in underline-animation" href=""
                 >Service</a
               >
-              <a class="duration-300 ease-linear hover:underline" href=""
+              <a class="duration-300 ease-linear underline-animation" href=""
                 >Work</a
               >
-              <a class="duration-300 ease-linear hover:underline" href=""
+              <a class="duration-300 ease-linear underline-animation" href=""
                 >Studio</a
               >
-              <a class="duration-300 ease-linear hover:underline" href=""
+              <a class="duration-300 ease-linear underline-animation" href=""
                 >Blog</a
               >
-              <a class="duration-300 ease-linear hover:underline" href=""
+              <a class="duration-300 ease-linear underline-animation" href=""
                 >Pages</a
               >
-              <a class="bg-black text-white rounded-md px-4 py-1" href=""
-                >Let' s Talk</a
-              >
             </div>
-            <div class="h-contain border-r"></div>
-            <div id="icons" class="flex items-center gap-1">
+            <a class="bg-black text-white h-fit flex justify-center items-center rounded-md px-4 py-1 hidden md:block" href=""
+              >Let' s Talk</a
+            >
+            <div class="h-contain border-r hidden md:block"></div>
+            <div class="flex gap-4 flex-row-reverse xl:flex-row">
+            <div id="icons" class="hidden items-center gap-1 md:flex">
               <div
                 class="rounded-full border p-4 font-medium relative hover:bg-black hover:text-white"
               >
@@ -91,7 +75,7 @@
                 </h6>
               </div>
             </div>
-            <div class="h-contain border-r"></div>
+            <div class="h-contain border-r hidden md:block"></div>
 
             <div class="w-14 flex items-center">
               <div class="p-2 w-full border rounded-full">
@@ -99,21 +83,26 @@
               </div>
             </div>
           </div>
+          <div class="h-contain border-r hidden md:block xl:hidden"></div>
+          <div class="xl:hidden w-12"> <img src="./assets/svgs/menu-5.png" alt=""></div>
+          </div>
         </nav>
       </section>
       <!-- section 2 image and contant -->
-      <section id="sec_2" class="w-full">
-        <div class="py-20 flex gap-10 border-b">
-          <div id="contant" class="w-1/2 aspect-12/10 relative">
-            <div class="font-[Syne] leading-none text-8xl">
+      <section>
+        <div class="py-10 md:py-20  gap-10 border-b flex flex-col xl:flex-row">
+          <div id="contant" class=" relative w-full flex flex-col-reverse justify-between xl:w-1/2 xl:flex-col xl:aspect-12/10">
+            <div>
+            <div class="font-[Syne] leading-none text-6xl md:w-4/6 xl:w-5/6 xl:text-7xl">
               We are a digital agency from Lisbon.
             </div>
-            <div class="text-3xl font-[Satoshi_Light] w-5/6">
+            <div class="text-2xl font-[Satoshi_Light] w-full md:w-5/6 xl:w-full xl:text-3xl">
               Elevating brands through creative digital solutions, proudly
               representing Lisbon's vibrant innovation.
             </div>
+          </div>
 
-            <div class="absolute -bottom-0 left-0">
+            <div class="mb-10 xl:mb-0">
               <img
                 class="w-20 object-contain"
                 src="./assets//svgs/dimond.svg"
@@ -121,7 +110,7 @@
               />
             </div>
           </div>
-          <div id="video" class="w-1/2 aspect-12/10">
+          <div id="video" class=" aspect-12/6 w-full xl:w-1/2 xl:aspect-12/10">
             <video
               class="w-full h-full object-cover rounded-2xl"
               autoplay
@@ -132,14 +121,14 @@
         </div>
       </section>
       <!-- section 3 marqee  -->
-      <section id="sec_3" class="w-full">
-        <div class="py-15 border-b">
-          <div class="flex gap-11">
-            <div class="text-xl py-5 font-[Satoshi_Light] uppercase">
+      <section>
+        <div class="py-10 md:py-20 border-b">
+          <div class="flex flex-col gap-2 md:flex-row md:gap-11 ">
+            <div class="text-xl text-center pb-2 font-[Satoshi_Light] uppercase md:py-5">
               Our Clients
             </div>
             <div class="h-contain border-r"></div>
-            <div class="w-[86%] items-center overflow-hidden">
+            <div class=" items-center overflow-hidden w-full md:w-[86%]">
               <div class="w-2/1 flex h-full items-center">
                 <div class="marqee w-1/2 flex items-center justify-around">
                   <img
@@ -158,34 +147,34 @@
                     alt="logo"
                   />
                   <img
-                    class="h-15"
+                    class="h-15 hidden md:block"
                     src="./assets//svgs/marqee-4.svg"
                     alt="logo"
                   />
                   <img
-                    class="h-15"
+                    class="h-15 hidden xl:block"
                     src="./assets//svgs/marqee-5.svg"
                     alt="logo"
                   />
                   <img
-                    class="h-15"
+                    class="h-15 hidden md:block"
                     src="./assets//svgs/marqee-6.svg"
                     alt="logo"
                   />
                 </div>
                 <div class="marqee w-1/2 flex items-center justify-around">
                   <img
-                    class="h-8"
+                    class="h-8 hidden md:block"
                     src="./assets//svgs/marqee-1.svg"
                     alt="logo"
                   />
                   <img
-                    class="h-15"
+                    class="h-15 hidden xl:block"
                     src="./assets//svgs/marqee-2.svg"
                     alt="logo"
                   />
                   <img
-                    class="h-15"
+                    class="h-15 hidden md:block"
                     src="./assets//svgs/marqee-3.svg"
                     alt="logo"
                   />
@@ -212,62 +201,62 @@
       </section>
       <!-- section 4 what we do  -->
       <section>
-        <div class="flex gap-10 py-20 font-[Satoshi_Light] border-b">
-          <div class="w-1/3 text-lg uppercase">what we do</div>
-          <div class="h-contain border-r"></div>
+        <div class="flex gap-10 py-10 md:py-20 font-[Satoshi_Light] border-b">
+          <div class="text-lg font-bold uppercase hidden md:block md:w-1/6  xl:w-1/3">what we do</div>
+          <div class="h-contain border-r hidden md:block"></div>
           <!-- right side container with for cards -->
-          <div class="w-2/3">
+          <div class="w-full md:w-5/6 xl:w-2/3">
             <!-- upper card container -->
-            <div class="w-full flex gap-10 pb-10 border-b">
-              <div class="w-1/2 aspect-2/1">
+            <div class="w-full xl:flex gap-10 xl:pb-10 xl:border-b">
+              <div class="w-full pb-10 xl:pb-0 border-b xl:border-b-0 xl:w-1/2">
                 <img
-                  class="w-18 object-contain"
+                  class="w-12 md:w-18 object-contain"
                   src="./assets/svgs/card-1.svg"
                   alt="design logo "
                 />
-                <h1 class="text-3xl font-bold my-5 uppercase">Branding</h1>
-                <p class="text-xl">
+                <h1 class="text-xl md:text-2xl xl:text-3xl font-bold my-5 uppercase">Branding</h1>
+                <p class="text-m md:text-lg xl:text-xl">
                   We craft compelling brand identities that leave a lasting
                   impression.
                 </p>
               </div>
-              <div class="h-contain border-r"></div>
-              <div class="w-1/2 aspect-2/1">
+              <div class="h-contain border-r hidden xl:block"></div>
+              <div class="w-full py-10 border-b xl:py-0 xl:border-b-0 xl:w-1/2">
                 <img
-                  class="w-18 object-contain"
+                  class="w-12 md:w-18 object-contain"
                   src="./assets/svgs/card-2.svg"
                   alt="design logo "
                 />
-                <h1 class="text-3xl font-bold my-5 uppercase">Design</h1>
-                <p class="text-xl">
+                <h1 class="text-xl md:text-2xl xl:text-3xl font-bold my-5 uppercase">Design</h1>
+                <p class="text-m md:text-lg xl:text-xl">
                   We craft compelling brand identities that leave a lasting
                   impression.
                 </p>
               </div>
             </div>
             <!-- lower card container -->
-            <div class="w-full flex gap-10 pt-10">
-              <div class="w-1/2 aspect-2/1">
+            <div class="w-full xl:flex gap-10 xl:pt-10">
+              <div class="w-full py-10 border-b xl:py-0 xl:border-b-0 xl:w-1/2">
                 <img
-                  class="w-18 object-contain"
+                  class="w-12 md:w-18 object-contain"
                   src="./assets/svgs/card-3.svg"
                   alt="design logo "
                 />
-                <h1 class="text-3xl font-bold my-5 uppercase">Branding</h1>
-                <p class="text-xl">
+                <h1 class="text-xl md:text-2xl xl:text-3xl font-bold my-5 uppercase">Branding</h1>
+                <p class="text-m md:text-lg xl:text-xl">
                   Captivating visual storytelling that engages and resonates
                   with your audience.
                 </p>
               </div>
               <div class="h-contain border-r"></div>
-              <div class="w-1/2 aspect-2/1">
+              <div class="w-full pt-10 xl:pt-0 xl:w-1/2">
                 <img
-                  class="w-18 object-contain"
+                  class="w-12 md:w-18 object-contain"
                   src="./assets/svgs/card-4.svg"
                   alt="design logo "
                 />
-                <h1 class="text-3xl font-bold my-5 uppercase">Design</h1>
-                <p class="text-xl">
+                <h1 class="text-xl md:text-2xl xl:text-3xl font-bold my-5 uppercase">Design</h1>
+                <p class="text-m md:text-lg xl:text-xl">
                   Engaging and persuasive content that captures attention and
                   sparks meaningful connections.
                 </p>
@@ -278,11 +267,11 @@
       </section>
       <!-- section 5 Featured Work -->
       <section>
-        <div class="flex gap-10 py-20 font-[Satoshi] border-b relative">
-          <div class="w-1/3 pr-10 relative">
+        <div class=" xl:flex gap-10 py-10 md:py-20 font-[Satoshi] border-b">
+          <div class=" w-full border-b pb-10 md:pb-20 xl:pb-0 xl:border-b-0 xl:w-1/3 xl:pr-10 relative">
             <div class="w-full sticky top-20">
-              <h1 class="text-6xl uppercase mb-8">Featured Work</h1>
-              <p class="text-2xl mb-12">
+              <h1 class="text-2xl md:text-4xl xl:text-6xl uppercase mb-8">Featured Work</h1>
+              <p class=" text-lg md:text-xl xl:text-2xl mb-12">
                 Showcasing our standout projects that blend creativity,
                 strategy, and cutting-edge design.
               </p>
@@ -293,9 +282,9 @@
               </button>
             </div>
           </div>
-          <div class="h-contain border-r"></div>
+          <div class="h-contain border-r hidden xl:block"></div>
           <!-- right side container to show images  -->
-          <div class="w-2/3">
+          <div class="w-full xl:w-2/3 pt-10 md:pt-20 xl:pt-0">
             <div class="image">
               <div class="w-full aspect-12/7 overflow-hidden rounded-xl">
                 <img
@@ -305,13 +294,13 @@
                 />
               </div>
               <div class="flex justify-between items-center py-2">
-                <h2 class="text-2xl font-[Syne] font-medium">Dancing Stars</h2>
-                <p class="text-lg font-medium text-gray-600">2023</p>
+                <h2 class="text-lg md:text-xl xl:text-2xl font-[Syne] font-medium">Dancing Stars</h2>
+                <p class="text-base md:text-lg font-medium text-gray-600">2023</p>
               </div>
             </div>
             <!-- 2nd row of images  -->
-            <div class="flex gap-10 mt-5">
-              <div class="w-1/2">
+            <div class="flex flex-col md:flex-row gap-10 mt-5">
+              <div class="w-full md:w-1/2">
                 <div class="image">
                   <div class="w-full aspect-12/7 overflow-hidden rounded-xl">
                     <img
@@ -321,14 +310,14 @@
                     />
                   </div>
                   <div class="flex justify-between items-center py-2">
-                    <h2 class="text-2xl font-[Syne] font-medium">
+                    <h2 class="text-lg md:text-xl xl:text-2xl font-[Syne] font-medium">
                       Enjoy Silence
                     </h2>
-                    <p class="text-lg font-medium text-gray-600">2023</p>
+                    <p class="text-base md:text-lg font-medium text-gray-600">2023</p>
                   </div>
                 </div>
               </div>
-              <div class="w-1/2">
+              <div class="w-full md:w-1/2">
                 <div class="image">
                   <div class="w-full aspect-12/7 overflow-hidden rounded-xl">
                     <img
@@ -338,17 +327,17 @@
                     />
                   </div>
                   <div class="flex justify-between items-center py-2">
-                    <h2 class="text-2xl font-[Syne] font-medium">
+                    <h2 class="text-lg md:text-xl xl:text-2xl font-[Syne] font-medium">
                       Pure Vision
                     </h2>
-                    <p class="text-lg font-medium text-gray-600">2023</p>
+                    <p class="text-base md:text-lg font-medium text-gray-600">2023</p>
                   </div>
                 </div>
               </div>
             </div>
             <!-- 3rd row of images -->
-            <div class="flex gap-10 mt-5">
-              <div class="w-1/2">
+            <div class="flex flex-col md:flex-row gap-10 mt-5">
+              <div class="w-full md:w-1/2">
                 <div class="image">
                   <div class="w-full aspect-12/7 overflow-hidden rounded-xl">
                     <img
@@ -358,14 +347,14 @@
                     />
                   </div>
                   <div class="flex justify-between items-center py-2">
-                    <h2 class="text-2xl font-[Syne] font-medium">
+                    <h2 class="text-lg md:text-xl xl:text-2xl font-[Syne] font-medium">
                       Boring Brand
                     </h2>
-                    <p class="text-lg font-medium text-gray-600">2023</p>
+                    <p class="text-base md:text-lg font-medium text-gray-600">2023</p>
                   </div>
                 </div>
               </div>
-              <div class="w-1/2">
+              <div class="w-full md:w-1/2">
                 <div class="image">
                   <div class="w-full aspect-12/7 overflow-hidden rounded-xl">
                     <img
@@ -375,10 +364,10 @@
                     />
                   </div>
                   <div class="flex justify-between items-center py-2">
-                    <h2 class="text-2xl font-[Syne] font-medium">
+                    <h2 class="text-lg md:text-xl xl:text-2xl font-[Syne] font-medium">
                       New Culture
                     </h2>
-                    <p class="text-lg font-medium text-gray-600">2023</p>
+                    <p class="text-base md:text-lg font-medium text-gray-600">2023</p>
                   </div>
                 </div>
               </div>
@@ -386,23 +375,25 @@
           </div>
         </div>
       </section>
-      <!-- How we work -->
+      <!-- section 6 How we work -->
       <section>
-        <div class="flex gap-10 h-[85vh] py-20 font-[Satoshi] border-b">
-          <div class="w-2/3 pr-20 relative">
-            <h3 class="text-lg traking-tight uppercase mb-5">how we work</h3>
+        <div class="xl:flex gap-10 xl:h-[85vh] py-10 md:py-20 font-[Satoshi] border-b">
+          <div class=" w-full xl:w-2/3 pr-20 flex flex-col-reverse md:flex-col justify-between md:border-b xl:border-b-0">
+            <div>
+            <h3 class=" text-base md:text-lg traking-tight uppercase mb-5">how we work</h3>
             <h1 class="text-6xl font-[Syne] font-medium">
               We help our clients succeed with innovative strategies.
             </h1>
+          </div>
             <img
-              class="w-24 object-contain absolute bottom-0 left-0"
+              class="w-24 object-contain mb-10 xl:mb-0 md:mt-10"
               src="./assets/svgs/card-4.svg"
               alt=""
             />
           </div>
-          <div class="h-contain border-r"></div>
-          <div class="w-1/3 px-5 relative">
-            <p class="text-2xl traking-tight font-light">
+          <div class="h-contain border-r hidden xl:block"></div>
+          <div class=" w-full xl:w-1/3 xl:px-5 flex flex-col justify-between">
+            <p class="text-lg md:text-xl xl:text-2xl  my-5 md:my-10 xl:my-0 font-light">
               Through careful analysis, creative thinking, and a deep
               understanding of their goals, we empower businesses to surpass
               expectations and thrive in today's dynamic and competitive
@@ -410,35 +401,35 @@
             </p>
 
             <button
-              class="text-lg font-medium px-4 py-1 bg-black text-white uppercase rounded-md absolute bottom-0 left-5"
+              class="text-lg font-medium px-4 py-1 bg-black text-white uppercase rounded-md  w-fit"
             >
               our <span class="ml-2"> Services</span>
             </button>
           </div>
         </div>
       </section>
-      <!-- our values heading -->
+      <!-- section 7 our values heading -->
       <section>
         <div
-          class="text-center py-10 text-6xl font-semibold font-[Syne] uppercase border-b"
+          class="text-center py-5 md:py-10 text-4xl md:text-5xl xl:text-6xl font-semibold font-[Syne] uppercase border-b"
         >
           our values
         </div>
       </section>
-      <!-- values explain -->
+      <!-- section 8 values explain -->
       <section>
-        <div class="py-20 flex gap-14 border-b">
-          <div class="w-1/2">
+        <div class="py-10 md:py-20 xl:flex gap-14 border-b">
+          <div class="w-full xl:w-1/2 pb-10 xl:pb-0 md:border-b xl:border-b-0 ">
             <img
               class="w-full h-full object-cover rounded-2xl"
               src="./assets/values.jpg"
               alt=""
             />
           </div>
-          <div class="h-contain border-r"></div>
-          <div class="w-1/2">
+          <div class="h-contain border-r hidden xl:block"></div>
+          <div class="w-full xl:w-1/2">
             <!-- part 1 -->
-            <div class="flex gap-5 font-[Satoshi_Light] pb-8 border-b">
+            <div class="flex gap-5 font-[Satoshi_Light] pb-8 md:pt-8 xl:pt-0 border-b">
               <div>
                 <div
                   class="rounded-full border p-4 font-medium relative hover:bg-black hover:text-white"
@@ -513,52 +504,54 @@
           </div>
         </div>
       </section>
-      <!-- contact -->
+      <!-- section 9 contact -->
       <section>
-        <div class="flex gap-10 h-[85vh] py-20 font-[Satoshi] border-b">
-          <div class="w-2/3 pr-20 relative">
-            <h3 class="text-lg traking-tight uppercase mb-5">contact</h3>
-            <h1 class="text-8xl font-[Syne] font-medium">
+        <div class="xl:flex gap-10 xl:h-[85vh] py-10 md:py-20 font-[Satoshi] border-b">
+          <div class="w-full xl:w-2/3 xl:pr-20 flex flex-col-reverse md:flex-col justify-between">
+            <div>
+            <h3 class=" text-base md:text-lg traking-tight uppercase mb-1 md:mb-5 ">contact</h3>
+            <h1 class="text-2xl md:text-3xl Xl:text-4xl md:text-6xl xl:text-8xl font-[Syne] font-medium mb-5 md:mb-10">
               Let’s bring your brand to the next level
             </h1>
+          </div>
             <img
-              class="w-24 object-contain absolute bottom-0 left-0"
+              class="w-12 md:w-18 xl:w-24 object-contain mb-5 xl:mb-0"
               src="./assets/svgs/card-2.svg"
               alt=""
             />
           </div>
-          <div class="h-contain border-r"></div>
-          <div class="w-1/3 px-5 relative">
-            <p class="text-3xl traking-tight font-light leading-[1.5]">
+          <div class="h-contain border-r hidden xl:block"></div>
+          <div class="w-full xl:w-1/3 xl:px-5 flex flex-col justify-between">
+            <p class="text-xl md:text-2xl xl:text-3xl traking-tight font-light leading-[1.5] mb-5 ">
               Together, let's elevate your brand to new heights by unleashing
               its full potential and captivating your target audience.
             </p>
 
             <button
-              class="text-lg font-medium px-4 py-1 bg-black text-white uppercase rounded-md absolute bottom-0 left-5"
+              class="test-base md:text-lg font-medium px-4 py-1 bg-black text-white uppercase rounded-md w-fit"
             >
               get <span class="mx-2"> in</span> touch
             </button>
           </div>
         </div>
       </section>
-      <!-- latest news heading -->
+      <!-- section 10 latest news heading -->
       <section>
         <div
-          class="py-10 font-[Syne] uppercase border-b flex justify-between items-center"
+          class="py-5 md:py-10 font-[Syne] uppercase border-b text-center md:flex justify-between items-center"
         >
-          <div class="text-6xl font-semibold">Latest News</div>
+          <div class="text-4xl md:text-5xl xl:text-6xl font-semibold">Latest News</div>
           <button
-            class="border py-2 px-4 uppercase rounded-md text-lg font-light"
+            class="border py-2 px-4 uppercase rounded-md text-lg font-light hidden md:block"
           >
             see all
           </button>
         </div>
       </section>
-      <!-- news -->
+      <!-- section 11 news -->
       <section>
-        <div class="py-20 border-b flex gap-10">
-          <div class="w-1/3">
+        <div class="py-10 md:py-20 border-b md:flex gap-10">
+          <div class="w-full md:w-1/2 xl:w-1/3 mb-5">
             <div class="image">
               <div class="w-full aspect-12/7 overflow-hidden rounded-xl">
                 <img
@@ -568,14 +561,14 @@
                 />
               </div>
               <div class="pt-2">
-                <p class="text-lg text-gray-800 mb-2">Branding</p>
-                <h2 class="text-2xl font-[Syne] font-medium">
+                <p class="text-base md:text-lg text-gray-800 mb-2">Branding</p>
+                <h2 class="text-lg md:text-xl xl:text-2xl font-[Syne] font-medium">
                   Things to Look for When Comparing Branding Alternatives
                 </h2>
               </div>
             </div>
           </div>
-          <div class="w-1/3">
+          <div class="w-full md:w-1/2 xl:w-1/3 mb-5">
             <div class="image">
               <div class="w-full aspect-12/7 overflow-hidden rounded-xl">
                 <img
@@ -585,14 +578,14 @@
                 />
               </div>
               <div class="pt-2">
-                <p class="text-lg text-gray-800 mb-2">Branding</p>
-                <h2 class="text-2xl font-[Syne] font-medium">
+                <p class="text-base md:text-lg text-gray-800 mb-2">Branding</p>
+                <h2 class="text-lg md:text-xl xl:text-2xl font-[Syne] font-medium">
                   5 Stand-out Features of Branding You Should Know
                 </h2>
               </div>
             </div>
           </div>
-          <div class="w-1/3">
+          <div class="w-full md:hidden xl:block xl:w-1/3 mb-5">
             <div class="image">
               <div class="w-full aspect-12/7 overflow-hidden rounded-xl">
                 <img
@@ -602,8 +595,8 @@
                 />
               </div>
               <div class="pt-2">
-                <p class="text-lg text-gray-800 mb-2">Branding</p>
-                <h2 class="text-2xl font-[Syne] font-medium">
+                <p class="text-base md:text-lg text-gray-800 mb-2">Branding</p>
+                <h2 class="text-lg md:text-xl xl:text-2xl font-[Syne] font-medium">
                   Branding: What Real Customers Have to Say
                 </h2>
               </div>
@@ -611,11 +604,12 @@
           </div>
         </div>
       </section>
-      <!-- links  -->
+      <!-- section 12 links  -->
       <section>
-        <div class="py-20 border-b flex gap-10">
-          <div class="w-1/3 relative">
-            <div class="logo font-medium text-3xl flex gap-5 items-center">
+        <div class="py-10 md:py-20 border-b md:flex gap-10">
+          <div class="w-full md:w-1/3 flex flex-col justify-between pb-10 md:pb-0 border-b md:border-b-0">
+            <div>
+            <div class="logo font-medium text-xl md:text-2xl xl:text-3xl flex gap-5 items-center">
               <img
                 class="w-12 object-contain"
                 src="./assets/svgs/mainLogo.svg"
@@ -623,13 +617,14 @@
               />
               <h1>FYLLA</h1>
             </div>
-            <div class="text-2xl font-[Satoshi] text-gray-800 my-10">
+            <div class="textlg4 md:text-xl xl:text-2xl font-[Satoshi] text-gray-800 my-10">
               <h3>Punjab</h3>
               <h3>Sabhra, Patti</h3>
             </div>
+            </div>
             <div
               id="icons"
-              class="flex items-center gap-1 absolute bottom-0 left-0"
+              class="flex items-center gap-1"
             >
               <div
                 class="rounded-full border p-4 font-medium relative hover:bg-black hover:text-white"
@@ -660,65 +655,64 @@
               </div>
             </div>
           </div>
-          <div class="h-contain border-r"></div>
-          <div class="w-2/3">
-            <div class="flex gap-10 w-full mb-10">
-              <div class="w-1/3">
-                <h1 class="font-[Syne] text-2xl font-medium mb-5">Pages</h1>
+          <div class="h-contain border-r hidden md:block"></div>
+          <div class="w-full md:w-2/3">
+            <div class="flex flex-col xl:flex-row gap-10 pt-10 md:pt-0 w-full">
+              <div class="w-full xl:w-1/3 border-b xl:border-b-0 pb-5 xl:pb-0">
+                <h1 class="font-[Syne] text-xl md:text-2xl font-medium mb-5">Pages</h1>
                 <div
                   class="text-lg font-[Satoshi] uppercase flex flex-col gap-5"
                 >
-                  <a class="hover:underline" href="">Home</a>
-                  <a class="hover:underline" href="">Service</a>
-                  <a class="hover:underline" href="">Studio</a>
-                  <a class="hover:underline" href="">Contact</a>
+                  <a  href=""><span class="underline-animation">Home</span></a>
+                  <a  href=""><span class="underline-animation">Service</span></a>
+                  <a  href=""><span class="underline-animation">Studio</span></a>
+                  <a  href=""><span class="underline-animation">Contact</span></a>
+                  <button
+                    class="text-lg font-medium w-fit px-4 py-1 bg-black text-white uppercase rounded-md">
+                    more <span class="ml-2"> tamplates</span>
+                  </button>
                 </div>
               </div>
-              <div class="w-1/3">
-                <h1 class="font-[Syne] text-2xl font-medium mb-5">CMS</h1>
+              <div class="w-full xl:w-1/3 border-b xl:border-b-0 pb-5 xl:pb-0">
+                <h1 class="font-[Syne] text-xl md:text-2xl font-medium mb-5">CMS</h1>
                 <div
-                  class="text-lg font-[Satoshi] uppercase flex flex-col gap-5"
-                >
-                  <a class="hover:underline" href="">Work</a>
-                  <a class="hover:underline" href="">Work Single</a>
-                  <a class="hover:underline" href="">Blog</a>
-                  <a class="hover:underline" href="">Blog Single</a>
+                  class="text-lg font-[Satoshi] uppercase flex flex-col gap-5">
+                  <a  href=""><span class="underline-animation">Work</span></a>
+                  <a  href=""><span class="underline-animation">Work Single</span></a>
+                  <a  href=""><span class="underline-animation">Blog</span></a>
+                  <a  href=""><span class="underline-animation">Blog Single</span></a>
                 </div>
               </div>
-              <div class="w-1/3">
-                <h1 class="font-[Syne] text-2xl font-medium mb-5">
+              <div class="w-full xl:w-1/3 pb-5 xl:pb-0 ">
+                <h1 class="font-[Syne] text-xl md:text-2xl font-medium mb-5">
                   Utility Pages
                 </h1>
                 <div
                   class="text-lg font-[Satoshi] uppercase flex flex-col gap-5"
                 >
-                  <a class="hover:underline" href="">404 Error Page</a>
-                  <a class="hover:underline" href="">Styleguide</a>
-                  <a class="hover:underline" href="">Licensing</a>
+                  <a  href=""><span class="underline-animation">404 Error Page</span></a>
+                  <a  href=""><span class="underline-animation">Styleguide</span></a>
+                  <a  href=""><span class="underline-animation">Licensing</span></a>
                 </div>
               </div>
             </div>
 
-            <button
-              class="text-lg font-medium px-4 py-1 bg-black text-white uppercase rounded-md"
-            >
-              more <span class="ml-2"> tamplates</span>
-            </button>
+            
           </div>
         </div>
       </section>
-      <!-- footer -->
+      <!-- section 13 footer -->
       <section>
-        <footer class="flex justify-between items-center font-[Satoshi]">
-          <div class="py-10 text-xl font-medium">
+        <footer class="py-5 md:py-10 flex flex-col gap-1 md:flex-row justify-center md:justify-between items-center font-[Satoshi]">
+          <div class="text-lg md:text-xl font-medium">
             &copy; Made by :
-            <span class="text-xl font-[Syne] text-gray-600">Gurdev Singh</span>
+            <span class="text-lg md:text-xl font-[Syne] text-gray-600">Gurdev Singh</span>
           </div>
           <div class="flex gap-10">
-            <h3 class="text-xl font-light uppercase hover:underline">
+            <h3 class="text-lg md:text-xl font-light uppercase underline-animation">
               Privacy
             </h3>
-            <h3 class="text-xl font-light uppercase hover:underline">
+            <h3 class="text-lg md:text-xl font-light uppercase underline-animation">
               Imprint
             </h3>
           </div>
