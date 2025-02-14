@@ -1,0 +1,87 @@
+@import url(../fonts/Satoshi/satoshi.css);
+@import url(../fonts/Syne/stylesheet.css);
+
+.grid{
+    display: grid;
+    grid-template-areas:
+    "a a b b"
+    "a a b b"
+    "a a b b"
+    "a a b b"
+    "a a c c"
+    "a a c c"
+    "a a c c"
+    ;
+    gap: 1rem;
+}
+.name-a{
+    grid-area: a;
+}
+.name-b{
+    grid-area: b;
+}
+.name-c{
+    grid-area: c;
+}
+
+
+
+@media (min-width:720px) {
+    .grid{
+    grid-template-areas:
+    ". . b b"
+    "a a b b"
+    "a a b b"
+    "a a b b"
+    "a a b b"
+    "a a c c"
+    "a a c c"
+    ". . c c"
+    ". . c c"
+    ; 
+    }
+    .grid-2{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width:1020px) {
+    .grid-2{
+        grid-template-columns: repeat(6, 1fr);
+    }
+        
+    
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marqee {
+  animation: marquee 15s cubic-bezier(0.19, 0.5, 0.22, 0.5) infinite both;
+}
+
+.underline-animation {
+  position: relative;
+}
+
+.underline-animation::after {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.06rem; 
+  width: 0;
+  background-color: #ffffff6d;
+  transition: all 0.3s;
+}
+
+.underline-animation:hover::after {
+  width: 100%;
+}
