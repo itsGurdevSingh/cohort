@@ -24,7 +24,18 @@
     grid-area: c;
 }
 
-
+.stroked-text {
+    text-shadow:
+    0 0 2px black, 
+    0 0 2px black,
+    0 0 2px black,
+    0 0 2px black,
+    0 0 2px black,
+    0 0 2px black,
+    0 0 2px black,
+    0 0 2px black; 
+   
+  } 
 
 @media (min-width:720px) {
     .grid{
@@ -45,7 +56,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
-@media (min-width:1020px) {
+@media (min-width:1120px) {
     .grid-2{
         grid-template-columns: repeat(6, 1fr);
     }

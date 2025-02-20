@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <main class="w-full h-full">
+
+        <section>
+            <div class="w-full bg-gray-200 py-10 px-20 ">
+                <div class="bg-gray-100 mb-10 w-full aspect-[4/1] px-4 py-2 rounded relative">
+                     <h2 class="text-xl font-semibold mb-2 border-b pb-2 ">Output :-</h2>
+                     <p id="result" class="font-medium"></p>
+                     <p class="absolute right-5 bottom-2">
+                        <span class="firstNum"></span>
+                        <span class="operator"></span>
+                        <span class="secondNum"></span>
+                     </p>
+                </div>
+                <div class="bg-gray-100 w-full mb-10 px-2 md:px-10">
+                    <div class="flex flex-col ">
+                        <label class="font-medium my-2" for="num1">First Number</label>
+                        <input oninput="handleChange(this.value,'num1')" id="num1" class="px-2 py-2 border focus:outline-none" type="number" placeholder="enter first number">
+                    </div>
+                    <div class="flex flex-col ">
+                        <label class="font-medium my-2" for="num2">Second Number</label>
+                        <input oninput="handleChange(this.value,'num2')" id="num2" class="px-2 py-2 border focus:outline-none" type="number" placeholder="enter Second number">
+                    </div>
+                    <div class="font-medium mt-2">Operation</div>
+                    <div class="flex justify-between my-2">
+                        <div class="flex gap-2">
+                            <button id="+" onclick="setOperation('+')" class="w-10 aspect-[1/1] border relative buttons">
+                               <div class="font-bold text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">+</div>
+                            </button>
+                            <button id="-" onclick="setOperation('-')" class="w-10 aspect-[1/1] border relative buttons">
+                               <div class="font-bold text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">-</div>
+                            </button>
+                            <button id="*" onclick="setOperation('*')" class="w-10 aspect-[1/1] border relative buttons">
+                               <div class="font-bold text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">*</div>
+                            </button>
+                            <button id="/" onclick="setOperation('/')" class="w-10 aspect-[1/1] border relative buttons">
+                               <div class="font-bold text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">/</div>
+                            </button>
+                        </div>
+                        <button onclick="calculate()" class="w-20 aspect-[2/1] border relative">
+                           <div class="font-bold text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">=</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+
+        let operation = '';
+
+        function handleChange(value, name) {
+            // let num1 = 0
+            // let num2 = 0 
+            const firstNum = document.querySelector('.firstNum');
+            const secondNum = document.querySelector('.secondNum');
+
+        if(name == 'num1'){
+            firstNum.textContent = value
+            if(operation){calculate()} 
+        }else if(name == 'num2'){
+            secondNum.textContent = value
+            if(operation){calculate()} 
+        }
+
+        }
+
+        function setOperation(operator) {
+            operation = operator
+            document.querySelector('.operator').textContent = operation;
+            calculate()
+            document.getElementById(operator).classList.add('bg-gray-300');
+        }
+
+        function calculate(){
+            const num1 = document.getElementById('num1') || 0 ;
+            const num2 = document.getElementById('num2') || 0 ;
+            const result = document.getElementById('result');
+
+            let answer = 0;
+
+            if(operation == "+"){
+                answer = parseFloat(num1.value) + parseFloat(num2.value);
+            } else if(operation == "-"){
+                answer = parseFloat(num1.value) - parseFloat(num2.value);
+            } else if (operation == "*"){
+                answer = parseFloat(num1.value) * parseFloat(num2.value);
+            } else {
+                answer = parseFloat(num1.value) / parseFloat(num2.value);
+            }
+
+            result.textContent = answer;
+
+        }
+
+    </script>
+</body>
+</html>
