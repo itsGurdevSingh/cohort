@@ -1,0 +1,89 @@
+@keyframes marqee {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+    
+}
+
+.marqee{
+    animation: marqee 15s linear infinite both ;
+}
+
+@keyframes marqee-2 {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(calc(-100% - 1.25rem));
+    }
+    
+}
+@keyframes marqee-3 {
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(calc(-100% - 1.25rem));
+    }
+    
+}
+@keyframes marqee-4 {
+    0%{
+        transform: translateX(calc(-100% - 1.25rem));
+    }
+    100%{
+        transform: translateX(0%);
+    }
+    
+}
+@keyframes marqee-5 {
+    0%{
+        transform: translateY(calc(-100% - 1.25rem));
+    }
+    100%{
+        transform: translateY(0%);
+    }
+    
+}
+
+.marqee-2{
+    animation: marqee-2 15s linear infinite both ;
+}
+.marqee-3{
+    animation: marqee-4 15s linear infinite both ;
+}
+
+.marqee-text{
+    animation: marqee-2 15s linear infinite both ;
+}
+
+
+.marqee-container{
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+}
+
+@media (min-width:768px) {
+    .marqee-2{
+        animation: marqee-3 15s linear infinite both ;
+    }
+    .marqee-3{
+        animation: marqee-5 15s linear infinite both ;
+    }
+      
+}

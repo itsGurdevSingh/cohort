@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../fonts/helvetica-now-display/stylesheet.css">
+    <link rel="stylesheet" href="../fonts/Satoshi/satoshi.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="font-[Satoshi]">
+
+    <div class="bg-[#F4F4FA]  px-5 md:px-20 py-2 md:py-5">
+        <nav>
+            <div class="mx-auto flex justify-between items-center px-4 py-4 rounded-xl bg-white 
+            fixed left-1/2 -translate-x-1/2 z-20 border border-gray-100  top-2 md:top-5 w-9/10 md:w-17/20  ">
+                <div class="">
+                    <div>
+                        <img class="h-8 object-contain" src="./assets/icons/logo.svg" alt="">
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center text-lg font-light gap-5 opacity-80 capitalize">
+                    <a href="">fetures</a>
+                    <a href="">benefits</a>
+                    <a href="">Pricing</a>
+                    <a href="">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <button class="bg-black text-white px-2 py-1 rounded-xl font-medium text-lg capitalize flex gap-1 items-center">
+                        <h1>purchase</h1>
+                        <img class="w-4" src="./assets/icons/more-a.png" alt="">
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <img class="w-4 h-full object-cover" src="./assets/icons/menu.png" alt="">
+                </div>
+            </div>
+        </nav>
+        <!-- text contant -->
+        <section>
+            <div class="px-5 py-15 md:py-20">
+                <div class="flex flex-col gap-5 justify-center items-center text-center xl:w-1/2 mx-auto">
+                    <h1 class="text-3xl md:text-4xl xl:text-6xl font-medium xl:leading-snug">AI Reimagined,
+                        Possibilities Amplified</h1>
+                    <p class="text-xl md:text-2xl xl:text-4xl">Crafting intelligent solutions that turn your wildest
+                        tech dreams into reality.</p>
+                    <div
+                        class="bg-black text-white md:text-lg xl:text-xl md:font-light rounded-xl px-4 py-2 w-fit flex gap-1">
+                        <button>Get Started</button>
+                        <img class="w-4" src="./assets/icons/button.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- images -->
+        <section>
+            <div class="relative w-full aspect-[10/6] md:aspect-[5/2] ">
+                <div
+                    class="w-4/5 scale-x-125 scale-y-75 md:w-1/2  md:1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+                    <img class="w-full h-full z-10 object-cover rounded-xl" src="./assets/img-1.png" alt="">
+                </div>
+                <div
+                    class="w-4/5 scale-x-115 scale-y-85 md:w-1/2 md:1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+                    <img class="w-full h-full object-cover rounded-xl" src="./assets/img-2.png" alt="">
+                </div>
+                <div
+                    class="w-4/5 md:w-1/2  md:1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+                    <img class="w-full h-full object-cover rounded-xl" src="./assets/img-3.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- marqee -->
+
+        <section>
+            <div class="py-10">
+                <h3 class="text-center font-medium text-lg md:text-xl text-gray-700 mb-5">As Featured In</h3>
+                <div class="w-full overflow-hidden">
+                    <div class="flex w-contain w-3/1 ">
+                        <div class="marqee flex items-center justify-around p-2 w-1/2">
+                            <img src="./assets/icons/marqee-1.svg" alt="">
+                            <img src="./assets/icons/marqee-2.svg" alt="">
+                            <img class="hidden md:block " src="./assets/icons/marqee-3.svg" alt="">
+                            <img class="hidden lg:block " src="./assets/icons/marqee-4.svg" alt="">
+                            <img class="hidden md:block " src="./assets/icons/marqee-5.svg" alt="">
+                            <img class="hidden md:block " src="./assets/icons/marqee-6.svg" alt="">
+                        </div>
+                        <div class="marqee flex items-center justify-around p-2 w-1/2">
+                            <img class="hidden md:block " src="./assets/icons/marqee-1.svg" alt="">
+                            <img class="hidden md:block " src="./assets/icons/marqee-2.svg" alt="">
+                            <img class="hidden lg:block " src="./assets/icons/marqee-3.svg" alt="">
+                            <img class="hidden md:block " src="./assets/icons/marqee-4.svg" alt="">
+                            <img src="./assets/icons/marqee-5.svg" alt="">
+                            <img src="./assets/icons/marqee-6.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- info -->
+        <section>
+            <div>
+                <div class="py-10">
+                    <h1 class="text-2xl  w-9/10 md:w-2/3 md:text-4xl mx-auto text-center font-medium mb-5">For 🏝️ individuals, 🎨 independent creators and 💼 tech companies</h1>
+                    <p class="text-center mx-auto md:w-2/3">Empowering individuals, creators, and tech innovators with cutting-edge AI solutions.</p>
+                </div>
+            </div>
+        </section>
+        <!-- cards -->
+        <section>
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2">
+                    <div class="w-full overflow-hidden bg-[#f8f8f8] px-5 pt-5  rounded-xl">
+                        <div class="text-lg font-medium">
+                        <h1>Neura is like Tesla, but it also</h1>
+                        <div class="flex gap-4 items-center my-2">
+                            <button class="flex gap-2 bg-[#edeafd] px-2 py-1 rounded-full">
+                             <img class="w-6" src="./assets/icons/stick.svg" alt="">
+                             <p class="text-violet-600">Generate</p>
+                            </button>
+                            <h1 > Images never used.</h1>
+                        </div>
+                    </div>
+                    <div class="w-full pt-5 drop-shadow-lg">
+                        <img src="./assets/card-1.webp" alt="">
+                    </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="w-full overflow-hidden bg-[#f8f8f8] px-5 pt-5  rounded-xl">
+                        <div class="text-lg font-medium">
+                        <h1>Don’t write by yourself, it’s boring. Instead, let AI</h1>
+                        <div class="flex gap-4 items-center my-2">
+                            <button class="flex gap-2 bg-[#ffdede] px-2 py-1 rounded-full">
+                             <img class="w-6" src="./assets/icons/stick-2.svg" alt="">
+                             <p class="text-orange-500">Generate</p>
+                            </button>
+                            <h1 > Your prompts.</h1>
+                        </div>
+                    </div>
+                    <div class="w-full drop-shadow-lg pt-5">
+                        <img class="w-full object-cover" src="./assets/card-2.svg" alt="">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- images sliders -->
+        <section>
+            <div class="py-10">
+                <div class="w-full md:aspect-[5/2] overflow-hidden md:flex gap-10 bg-[#ffffff] px-5 pt-5  rounded-xl">
+                    <!-- info -->
+                    <div class="flex flex-col gap-2 lg:gap-5 py-5 md:py-2 lg:py-5 md:w-1/2 my-auto">
+                        <h2 class="text-2xl font-medium">Neural Vision 3.5</h2>
+                        <p>Unlock the future of creativity with Neural Vision 3.5.  Featuring cutting-edge enhancements and versatile options like   the powerful 3.5 Large variant</p>
+                        <div class="bg-black text-white md:text-lg xl:text-xl md:font-light rounded-xl px-4 py-2 w-fit flex gap-1">
+                            <button>Get Started</button>
+                            <img class="w-4" src="./assets/icons/button.svg" alt="">
+                        </div>
+                    </div>    
+                    <!-- marqee -->
+                     <div class="flex flex-col md:flex-row md:w-1/2">
+                     <div class="pr-2 overflow-hidden md:w-9/12 ">
+                        <div class="flex md:flex-col gap-5 w-full aspect-[3/1]">
+                            <div class=" marqee-2 md:flex-col flex p-1 gap-5 flex-shrink-0">
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-1.png" alt="">
+                                </div>
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-2.png" alt="">
+                                </div>
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-3.png" alt="">
+                                </div>
+                            </div>
+                            <div class=" marqee-2 md:flex-col flex p-1 gap-5 flex-shrink-0">
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-1.png" alt="">
+                                </div>
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-2.png" alt="">
+                                </div>
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-3.png" alt="">
+                                </div>
+                            </div>
+                            
+                        </div>
+                     </div>
+                     <div class="pl-3 overflow-hidden md:w-9/14 ">
+                        <div class="flex md:flex-col gap-5 w-full aspect-[3/1] py-3">
+                            <div class=" marqee-3 md:flex-col flex p-1 gap-5 flex-shrink-0">
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-4.png" alt="">
+                                </div>
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-5.png" alt="">
+                                </div>
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-6.png" alt="">
+                                </div>
+                            </div>
+                            <div class=" marqee-3 md:flex-col flex p-1 gap-5 flex-shrink-0">
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-4.png" alt="">
+                                </div>
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-5.png" alt="">
+                                </div>
+                                <div class="aspect-[3/2] md:aspect-[5/4] flex-shrink-0">
+                                    <img class="h-full w-full object-cover rounded-3xl" src="./assets/slide-6.png" alt="">
+                                </div>
+                            </div>
+                            
+                        </div>
+                     </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- cards -->
+         <section>
+            <div>
+                <div class="text-center py-20 ">
+                    <h1 class="text-xl font-medium md:text-3xl pb-5">Neura does powerful work in a really simple way</h1>
+                    <p class="text-lg md:text-xl pb-5">All within an enterprise-grade secure environment.</p>
+                </div>
+                <!-- cards containers -->
+                <div class=" flex flex-col gap-5 md:flex-row">
+                    <div class="rounded-2xl bg-white overflow-hidden">
+                        <!-- top -->
+                        <div class="bg-[#1B1D21] text-white px-8 py-8 flex flex-col gap-3 ">
+                            <div><img class="w-8" src="./assets/icons/card-1.svg" alt=""></div>
+                            <h2 class="text-xl md:text-2xl text-[#FF7442] font-medium">Easy for Anyone</h2>
+                            <p class="text-lg md:text-xl font-medium">Simplify collaboration for everyone.</p>
+                        </div>
+                        <!-- bottom -->
+                         <div class="px-8 py-8">
+                            <p class="text-lg md:text-xl">Neura's intuitive design ensures anyone, regardless of technical expertise, can harness AI tools effortlessly.</p>
+                         </div>
+                    </div>
+                    <div class="rounded-2xl bg-white overflow-hidden">
+                        <!-- top -->
+                        <div class="bg-[#1B1D21] text-white px-8 py-8 flex flex-col gap-3 ">
+                            <div><img class="w-8" src="./assets/icons/card-2.svg" alt=""></div>
+                            <h2 class="text-xl md:text-2xl text-[#FF7442] font-medium">So. Fast.</h2>
+                            <p class="text-lg md:text-xl font-medium">Accelerate your team's productivity</p>
+                        </div>
+                        <!-- bottom -->
+                         <div class="px-8 py-8">
+                            <p class="text-lg md:text-xl">Neura delivers lightning-fast results, streamlining workflows and saving valuable time on every task.</p>
+                         </div>
+                    </div>
+                    <div class="rounded-2xl bg-white overflow-hidden">
+                        <!-- top -->
+                        <div class="bg-[#1B1D21] text-white px-8 py-8 flex flex-col gap-3 ">
+                            <div><img class="w-8" src="./assets/icons/card-3.svg" alt=""></div>
+                            <h2 class="text-xl md:text-2xl text-[#FF7442] font-medium">Smart Solutions</h2>
+                            <p class="text-lg md:text-xl font-medium">AI built for smarter business decisions.</p>
+                        </div>
+                        <!-- bottom -->
+                         <div class="px-8 py-8">
+                            <p class="text-lg md:text-xl">Unlock innovative possibilities with Neura's intelligent tools, designed to optimize efficiency and insight.</p>
+                         </div>
+                    </div>
+
+                </div>
+            </div>
+         </section>
+
+    </div>
+    <div class="bg-white px-5 py-2 md:py-5">
+         <!-- big image -->
+          <section>
+            <div class="py-10 px-5 bg-white my-10 rounded-3xl"> 
+                <div class="flex flex-col gap-4 items-center text-center pb-10">
+                    <h1 class="text-2xl md:text-3xl font-medium">
+                        We use advanced AI tools to enhance our systems
+                        <div class="flex flex-col md:flex-row justify-center items-center md:gap-4">
+                            <p> for delivering</p> 
+                            <img class="w-25 rounded-3xl my-2" src="./assets/h1.png" alt="">
+                            <p> smarter solutions</p>
+                        </div>    
+                        to transform the industry
+                    </h1>
+                </div>
+                <div class="relative ">
+                    <img class="rounded-3xl h-full w-full " src="./assets/big.png" alt="">
+                    
+                    <div class="marqee-container flex gap-5 w-full overflow-x-hidden py-4 absolute top-2/5">
+                        <div class="marqee-text text-2xl md:text-4xl lg:text-6xl font-medium flex-shrink-0 text-white flex gap-5  ">
+                             <div class="flex-shrink-0"> • Enhance Image generator</div>   
+                             <div class="flex-shrink-0"> • Quick respond</div>
+                        </div>
+                        <div class="marqee-text text-2xl md:text-4xl lg:text-6xl font-medium flex-shrink-0 text-white flex gap-5  ">
+                             <div class="flex-shrink-0"> • Enhance Image generator</div>   
+                             <div class="flex-shrink-0"> • Quick respond</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+        <!-- cards 2 -->
+         <section>
+            <div class="pb-10 bg-white rounded-3xl">
+                <div class="text-center py-5 ">
+                    <h1 class="text-xl font-medium md:text-3xl pb-5">Transforming Efficiency in Healthcare</h1>
+                    <p class="text-lg md:text-xl pb-5">Neura’s Impact at a Glance</p>
+                </div>
+                <!-- cards containers -->
+                <div class=" flex flex-col gap-5 md:flex-row">
+                    <div class="rounded-2xl bg-white overflow-hidden md:w-1/3 border border-gray-100">
+                        <!-- top -->
+                        <div class=" px-8 py-8 flex flex-col gap-3 ">
+                            <div class="text-lg md:text-xl font-semibold text-violet-500 bg-violet-50 w-fit px-4 py-2 rounded-2xl ">Performance Increase:</div>
+                            <h2 class="text-3xl md:text-4xl font-semibold">700%</h2>
+                            <p class="text-lg md:text-xl font-medium">Boost in task automation efficiency, optimizing <span class="font-extrabold">workflows for all users.</span></p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl bg-white overflow-hidden md:w-1/3 border border-gray-100">
+                        <!-- top -->
+                        <div class=" px-8 py-8 flex flex-col gap-3 ">
+                            <div class="text-lg md:text-xl font-semibold text-orange-500 bg-orange-50 w-fit px-4 py-2 rounded-2xl ">User Engagement:
+
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-semibold">95%</h2>
+                            <p class="text-lg md:text-xl font-medium">Growth in <span class="font-extrabold">interactive sessions, </span> enhancing user experience and satisfaction.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl bg-white overflow-hidden md:w-1/3 border border-gray-100">
+                        <!-- top -->
+                        <div class=" px-8 py-8 flex flex-col gap-3 ">
+                            <div class="text-lg md:text-xl font-semibold text-gray-800 bg-gray-100 w-fit px-4 py-2 rounded-2xl ">Processing Speed:</div>
+                            <h2 class="text-3xl md:text-4xl font-semibold">0.7 second</h2>
+                            <p class="text-lg md:text-xl font-medium">Lightning-fast response times, ensuring 
+                                <span class="font-extrabold">seamless interactions </span>
+                                with our AI systems. </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+         </section>
+         
+        <!-- cards 3 -->
+         <section>
+            <div class="py-10">
+                <div class="text-center py-5 ">
+                    <h1 class="text-xl font-medium md:text-3xl pb-5">What Our Users Are Saying</h1>
+                    <p class="text-lg md:text-xl pb-5">At Neura, we believe in the power of connection and collaboration. </p>
+                </div>
+                <!-- cards containers -->
+                <div class=" flex flex-col gap-5 md:flex-row">
+                    <div class="rounded-2xl bg-violet-100 overflow-hidden md:w-1/3 border border-violet-200 flex justify-center items-center">
+                        <!-- top -->
+                        <div class=" px-8 py-8 flex flex-col justify-center items-center text-center gap-3 ">
+                            <h2 class="text-3xl md:text-4xl font-medium">100+</h2>
+                            <p class="text-lg md:text-xl ">All within an enterprise-grade secure environment. </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl bg-red-100 overflow-hidden md:w-2/3 border border-red-200 ">
+                        <!-- top -->
+                        <div class=" px-8 py-8 flex flex-col gap-5 ">
+                            <div><img class="w-12" src="./assets/icons/colon.svg" alt=""></div>
+                            <p class="text-lg md:text-xl font-medium">I think it benefits everyone for devs to have more options to get paid 
+                                to work on their passions, to support upstreams, and for users to have more confidence/transparency 
+                                in the software</p>
+                            
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-16 rounded-full object-cover" src="./assets/profile.png" alt=""></div>
+                                <div>
+                                    <div class="flex gap-2">
+                                        <h1 class="text-lg md:text-xl font-medium">Mitchell Hashimoto</h1>
+                                        <img class="w-4" src="./assets/icons/blue-tick.svg" alt="">
+                                    </div>
+                                    <div class="md:text-lg font-light">@mtchlhshmt</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+         </section>
+
+        <!-- plans -->
+        <section>
+            <div class="py-10">
+                <div class="text-center py-10">
+                    <h1 class="text-xl font-medium md:text-3xl pb-5">Choose the Plan That Fits Your Needs</h1>
+                    <p class="text-lg md:text-xl pb-5">Whether you’re just starting out or looking to expand your capabilities,
+                         our plans provide the perfect solution for your needs.</p>
+                </div>
+                <!-- cards containers -->
+                <div class=" flex flex-col gap-5 md:flex-row">
+                    <div class="rounded-2xl bg-white px-4 border border-gray-100 overflow-hidden md:w-1/3">
+                        <!-- top -->
+                        <div class="border-b  border-gray-100 py-4 flex flex-col gap-3 ">
+                            <div class="text-lg font-medium md:text-xl">Free</div>
+                            <p class="text-lg md:text-xl ">Ideal for testing and evaluation or small-scale deployments.</p>
+
+                            <div class="flex gap-4 items-center">
+                                <h1 class="text-2xl md:text-3xl font-medium">$0.00</h1>
+                                <p class="text-lg md:text-xl">Up to 250 creditsper month</p>
+                            </div>
+                        </div>
+                        <!-- bottom -->
+                         <div class=" py-4 flex flex-col gap-5">
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-8 bg-gray-200 p-2 rounded-full" src="./assets/icons/tick.svg" alt="">
+                                </div>
+                                <div class="text-lg md:text-xl ">Essential features</div>
+                            </div>
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-8 bg-gray-200 p-2 rounded-full" src="./assets/icons/tick.svg" alt="">
+                                </div>
+                                <div class="text-lg md:text-xl ">Essential features</div>
+                            </div>
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-8 bg-gray-200 p-2 rounded-full" src="./assets/icons/tick.svg" alt="">
+                                </div>
+                                <div class="text-lg md:text-xl ">Essential features</div>
+                            </div>
+                            <div>
+                                <button class="text-xl md:text-2xl px-4 py-4 text-center bg-black text-white w-full rounded-2xl">Get Started</button>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="rounded-2xl bg-black text-white px-4 border border-gray-100 overflow-hidden md:w-1/3">
+                        <!-- top -->
+                        <div class="border-b  border-gray-100 py-4 flex flex-col gap-3 ">
+                            <div class="text-lg font-medium md:text-xl">Basic</div>
+                            <p class="text-lg md:text-xl ">Perfect for small teams looking to enhance their operations.</p>
+
+                            <div class="flex gap-4 items-center">
+                                <h1 class="text-2xl md:text-3xl font-medium">$24.99</h1>
+                                <p class="text-lg md:text-xl">1000 creditsper month</p>
+                            </div>
+                        </div>
+                        <!-- bottom -->
+                         <div class=" py-4 flex flex-col gap-5">
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-8 bg-gray-50 p-2 rounded-full" src="./assets/icons/tick.svg" alt="">
+                                </div>
+                                <div class="text-lg md:text-xl ">Essential features</div>
+                            </div>
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-8 bg-gray-50 p-2 rounded-full" src="./assets/icons/tick.svg" alt="">
+                                </div>
+                                <div class="text-lg md:text-xl ">Basic support options</div>
+                            </div>
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-8 bg-gray-50 p-2 rounded-full" src="./assets/icons/tick.svg" alt="">
+                                </div>
+                                <div class="text-lg md:text-xl ">Community resources</div>
+                            </div>
+                            <div>
+                                <button class="text-xl md:text-2xl px-4 py-4 text-center w-full rounded-2xl bg-white text-black">Get Started</button>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="rounded-2xl bg-white px-4 border border-gray-100 overflow-hidden md:w-1/3">
+                        <!-- top -->
+                        <div class="border-b  border-gray-100 py-4 flex flex-col gap-3 ">
+                            <div class="text-lg font-medium md:text-xl">Pro</div>
+                            <p class="text-lg md:text-xl ">Designed for larger teams and advanced projects.</p>
+
+                            <div class="flex gap-4 items-center">
+                                <h1 class="text-2xl md:text-3xl font-medium">$49.00</h1>
+                                <p class="text-lg md:text-xl">Unlimited creditsper month</p>
+                            </div>
+                        </div>
+                        <!-- bottom -->
+                         <div class=" py-4 flex flex-col gap-5">
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-8 bg-gray-200 p-2 rounded-full" src="./assets/icons/tick.svg" alt="">
+                                </div>
+                                <div class="text-lg md:text-xl ">Full access to all features</div>
+                            </div>
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-8 bg-gray-200 p-2 rounded-full" src="./assets/icons/tick.svg" alt="">
+                                </div>
+                                <div class="text-lg md:text-xl ">Dedicated support</div>
+                            </div>
+                            <div class="flex gap-4 items-center">
+                                <div>
+                                    <img class="w-8 bg-gray-200 p-2 rounded-full" src="./assets/icons/tick.svg" alt="">
+                                </div>
+                                <div class="text-lg md:text-xl ">Custom resources</div>
+                            </div>
+                            <div>
+                                <button class="text-xl md:text-2xl px-4 py-4 text-center bg-black text-white w-full rounded-2xl">Get Started</button>
+                            </div>
+                         </div>
+                    </div>
+                   
+                </div>
+            </div>
+         </section>
+
+    </div>
+    <div class="bg-[#1B1D21] text-white px-5 py-2 md:py-5">
+        <footer>
+            <div class="py-20">
+                <div>
+                    <!-- part-1 -->
+                    <div class="flex flex-col gap-2 md:flex-row md:justify-between md:items-start">
+                        <div class="flex flex-col gap-2">
+                            <div><img class="w-42 pb-4" src="./assets/footer-1.svg" alt=""></div>
+                            <p class="text-lg md:text-xl">Crafting intelligent solutions that turn <br class="hidden md:block"> your wildest tech dreams into reality.</p>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img class="w-8" src="./assets/icons/email.svg" alt="">
+                            <p class="text-lg md:text-xl">support@neura.ai</p>
+                        </div>
+                    </div>
+                    <!-- part-2 -->
+                    <div class="flex flex-col md:flex-row md:gap-10 py-5">
+                        <div class="flex flex-col md:flex-row md:w-1/2 md:gap-10">
+                            <div class="py-4 flex flex-col gap-2">
+                                <h1 class="text-lg md:text-xl font-semibold">Company</h1>
+                                <p class="md:text-lg">Blog</p>
+                                <p class="md:text-lg">Contact us</p>
+                            </div>
+                            <div class="py-4 flex flex-col gap-2">
+                                <h1 class="text-lg md:text-xl font-semibold">Legal</h1>
+                                <p class="md:text-lg">Terms & Conditions</p>
+                                <p class="md:text-lg">Privacy Policy</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="py-4 flex flex-col gap-2">
+                                <h1 class="text-lg md:text-xl font-semibold">Stay up to date</h1>
+                                <p class="md:text-lg">Get the latest updates and exclusive tips to boost your sales</p>
+                                <div class="flex gap-2">
+                                    <input class="bg-white/20 px-4 py-2 rounded-xl border border-white/40 w-full md:w-2/3 
+                                    placeholder:text-white focus:outline-1 focus:outline-orange-600 focus:border-white/0" 
+                                    type="text" placeholder="jane@framer.com">
+                                    <button class="px-4 py-2 rounded-xl bg-orange-600 text-black w-full md:w-1/3">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- part-3 -->
+                     <div class="py-5">
+                        <img class="w-full" src="./assets/footer-logo.svg" alt="">
+                     </div>
+                     <!-- part-4 -->
+                      <div class="flex flex-col gap-2 md:flex-row md:justify-between md:items-center pt-10">
+                        <div class="text-lg md:text-xl">&copy; 2025. All rights reserved. Neura</div>
+                        <div class="flex gap-2 items-center">
+                            <p class="text-lg md:text-xl">@neura</p>
+                            <img class="w-8" src="./assets/icons/linkdin.svg" alt="">
+                            <img class="w-8" src="./assets/icons/insta.svg" alt="">
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+    </main>
+
+</body>
+
+</html>
