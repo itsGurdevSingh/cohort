@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../fonts/helvetica-now-display/stylesheet.css" />
+    <link rel="stylesheet" href="../fonts/Satoshi/satoshi.css" />
+</head>
+
+<body>
+    <main class="py-2 px-5 md:px-15 md:py-4 font-sans">
+        <nav>
+            <div class="px-5 md:px-15 py-2 flex justify-between text-sm font-medium w-full fixed top-0 left-1/2 z-10 transform -translate-x-1/2">
+                <div>Obra</div>
+                <div class="hidden md:flex gap-5 items-center justify-center ml-20">
+                    <a href="">Work</a>
+                    <a href="">Insights</a>
+                    <a href="">About</a>
+                </div>
+                <div class="hidden md:block">Contact Us</div>
+                <div class="md:hidden">Menu</div>
+            </div>
+        </nav>
+
+        <!-- text -->
+        <section>
+            <div class="mt-42 flex flex-col xl:flex-row xl:items-end gap-5">
+                <div class="xl:w-1/4 text-lg md:text-xl font-medium">Welcome</div>
+                <div class="xl:w-3/4 text-3xl md:text-5xl font-semibold pr-5">
+                    Obra is a design studio based in Barcelona. We help the biggest
+                    brands shape memories.
+                </div>
+            </div>
+        </section>
+
+        <!-- grid -->
+        <section>
+            <div class="grid-container py-10 md:py-20">
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-1">
+                    <img class="w-full h-full object-cover" src="./assets/images/man.jpg" alt="" />
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">Northface</h1>
+                        <h2 class="font-semibold md:text-3xl">Arctic Explorer</h2>
+                    </div>
+                </div>
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-2">
+                    <img class="w-full h-full object-cover" src="./assets/images/netflix.jpg" alt="" />
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">Netflix</h1>
+                        <h2 class="font-semibold md:text-3xl">Cinema Icon</h2>
+                    </div>
+                </div>
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-3">
+                    <video class="w-full h-full object-cover" muted autoplay src="./assets/video/ph3_v1.mp4"></video>
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">OpenAI</h1>
+                        <h2 class="font-semibold md:text-3xl">Mova App</h2>
+                    </div>
+                </div>
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-4">
+                    <img class="w-full h-full object-cover" src="./assets/images/flag.jpg" alt="" />
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">Porsche</h1>
+                        <h2 class="font-semibold md:text-3xl">GT3 Turbo</h2>
+                    </div>
+                </div>
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-5">
+                    <img class="w-full h-full object-cover" src="./assets/images/speaker.jpg" alt="" />
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">Sonos</h1>
+                        <h2 class="font-semibold md:text-3xl">Amp One</h2>
+                    </div>
+                </div>
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-6">
+                    <img class="w-full h-full object-cover" src="./assets/images/park.jpg" alt="" />
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">Nike</h1>
+                        <h2 class="font-semibold md:text-3xl">The Pitch</h2>
+                    </div>
+                </div>
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-7">
+                    <img class="w-full h-full object-cover" src="./assets/images/brain.jpg" alt="" />
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">Google</h1>
+                        <h2 class="font-semibold md:text-3xl">DeepMind</h2>
+                    </div>
+                </div>
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-8">
+                    <img class="w-full h-full object-cover" src="./assets/images/bottel.jpg" alt="" />
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">Aesop</h1>
+                        <h2 class="font-semibold md:text-3xl">Oil Melange</h2>
+                    </div>
+                </div>
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-9">
+                    <video class="w-full h-full object-cover" muted autoplay src="./assets/video/v1.mp4"></video>
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">Space X</h1>
+                        <h2 class="font-semibold md:text-3xl">Mars Space Suit</h2>
+                    </div>
+                </div>
+                <div class="w-full max-md:aspect-[16/9] relative overflow-hidden card-10">
+                    <img class="w-full h-full object-cover" src="./assets/images/powder.jpg" alt="" />
+                    <div class="absolute left-0 bottom-0 p-4 text-white">
+                        <h1 class="font-medium opacity-60 md:text-3xl">Starbucks</h1>
+                        <h2 class="font-semibold md:text-3xl">Sensa Arabica</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-end pb-42">
+                <h1 class="font-semibold">View All</h1>
+            </div>
+        </section>
+
+        <!-- Contact -->
+         <section>
+            <div class="border-y border-black/10 py-10 md:py-20 flex flex-col md:flex-row gap-5 " >
+                <div class="xl:w-1/4 text-lg md:text-xl font-medium md:w-1/4">Contact</div>
+                <div class="flex flex-col gap-5 md:w-3/4">
+                    <p class="text-3xl md:text-5xl font-semibold pr-5">We are currently open for collaborations and new projects.</p>
+                    <p class="text-sm md:text-lg font-medium">Let's Talk</p>
+                </div>
+            </div>
+         </section>
+
+         <footer>
+            <div class="py-10 md:py-20 grid-footer border-b border-black/10">
+                <div class="flex flex-col gap-5 part-1">
+                    <h1 class="cursor-pointer font-bold text-xl md:text-3xl text-gray-600 hover:opacity-40">Obra</h1>
+                    <p class="font-medium text-gray-400 md:text-lg">Subscribe to our newsletter and receive monthly updates about our work.</p>
+                    <div>
+                        <input class="px-4 py-2 rounded-full bg-gray-100 placeholder:font-medium focus:outline-none md:text-lg " type="text" 
+                        placeholder="name@email.com ->">
+                    </div>
+                </div>
+                <div class="part-2">
+                    <h1 class="text-lg md:text-xl font-semibold mb-4">Page</h1>
+                    <div class="flex flex-col gap-1 text-gray-400 font-medium">
+                    <a href="">Home</a>
+                    <a href="">About</a>
+                    <a href="">Work</a>
+                    <a href="">Insights</a>
+                </div>
+                </div>
+                <div class="part-3">
+                    <h1 class="text-lg md:text-xl font-semibold mb-4">Socials</h1>
+                    <div class="flex flex-col gap-1 text-gray-400 font-medium">
+                    <a href="">Instagram</a>
+                    <a href="">X.com</a>
+                    <a href="">Contra</a>
+                    <a href="">Behance</a>
+                </div>
+                </div>
+                <div class="part-4">
+                    <h1 class="text-lg md:text-xl font-semibold mb-4">Template</h1>
+                    <div class="flex flex-col gap-1 text-gray-400 font-medium">
+                    <a href="">Buy Template</a>
+                    <a href="">Build In Framer</a>
+                    <a href="">More Templates</a>
+                    <a href="">coded by dev</a>
+                </div>
+                </div>
+            </div>
+            <div class="grid-footer2 gap-2 flex justify-between font-medium text-gray-400 md:text-lg px-4 py-2 ">
+                <div class="text-1">Obra &copy; 2024 <br class="md:hidden"> All rights reserved</div>
+                <div class="text-2">Terms</div>
+                <div class="text-3">Privacy</div>
+            </div>
+         </footer>
+    </main>
+</body>
+
+</html>

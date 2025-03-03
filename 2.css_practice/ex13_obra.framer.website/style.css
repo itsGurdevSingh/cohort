@@ -1,0 +1,110 @@
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h"
+    "i"
+    "j"
+    ;
+    gap: 0.5rem;
+    
+}
+
+.card-1{
+    grid-area: a;
+}
+.card-2{
+    grid-area: b;
+}
+.card-3{
+    grid-area: c;
+}
+.card-4{
+    grid-area: d;
+}
+.card-5{
+    grid-area: e;
+}
+.card-6{
+    grid-area: f;
+}
+.card-7{
+    grid-area: g;
+}
+.card-8{
+    grid-area: h;
+}
+.card-9{
+    grid-area: i;
+}
+.card-10{
+    grid-area: j;
+}
+
+.grid-footer{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    ;
+}
+
+.part-1{
+    grid-area: a;
+}
+.part-2{
+    grid-area: b;
+}
+.part-3{
+    grid-area: c;
+}
+.part-4{
+    grid-area: d;
+}
+
+@media (min-width:768px) {
+    .grid-container{
+        aspect-ratio: 1/1; 
+        grid-template-columns: repeat(4, 1fr); 
+        grid-template-rows: repeat(4, 1fr); 
+        grid-template-areas: 
+        "a b c c"
+        "a d d e"
+        "f g g e"
+        "i i h j"
+        ;
+    } 
+}
+@media (min-width:1120px) {
+    .grid-footer{
+        grid-template-columns:repeat(8,1fr);
+        grid-template-areas:
+        "a a . . b c d ."
+        ;
+    }
+    .grid-footer2{
+        display: grid;
+        grid-template-columns:repeat(8,1fr);
+        grid-template-areas:
+        "a a . . b . c ."
+        ;
+    }
+    .text-1{
+        grid-area: a;
+    }
+    .text-2{
+        grid-area: b;
+    }
+    .text-3{
+        grid-area: c;
+    }
+}
