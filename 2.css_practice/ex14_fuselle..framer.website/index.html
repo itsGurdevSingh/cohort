@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../fonts/helvetica-now-display/stylesheet.css" />
+    <link rel="stylesheet" href="../fonts/Satoshi/satoshi.css" />
+</head>
+
+<body class="font-sans">
+    <main class="py-5 px-5 md:px-10 selection:bg-black selection:text-white">
+        <nav>
+            <div class="flex gap-2 py-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 hover:scale-y-110">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                  </svg>
+                  <h1 class="font-bold">Mikko Fusélle </h1>
+                   <span class="text-gray-400 font-bold"> Thinking</span>   
+            </div>
+        </nav>
+        <section class="py-8 flex flex-col justify-center items-center gap-5">
+            <h1 class="font-bold text-center">A bold Framer template for <br> well-curated Stories that matter</h1>
+            <img class="h-full w-18" src="./assets/images/f_logo.svg" alt="logo">
+            <div class="overflow-hidden w-full">
+                <div class="flex gap-20 overflow-hidden ">
+                    <ul class="marqee font-bold tracking-tighter text-[8rem] md:text-[15rem] flex gap-20 flex-shrink-0 ">
+                        <li class="flex-shrink-0">Journal</li>
+                        <li class="flex-shrink-0">Blog</li>
+                        <li class="flex-shrink-0">Magazine</li>
+                    </ul>
+                    <ul class="marqee font-bold tracking-tighter text-[8rem] md:text-[15rem] flex gap-20 flex-shrink-0 ">
+                        <li class="flex-shrink-0">Journal</li>
+                        <li class="flex-shrink-0">Blog</li>
+                        <li class="flex-shrink-0">Magazine</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="bg-black mt-5 text-white px-8 py-4 rounded-full font-bold shake">
+                Buy Now 49 USD
+            </button>
+        </section>
+        <section class="py-20">
+            <div class="flex gap-5 bg-[#E3FC02] imgContainer w-full aspect-[5/3] overflow-hidden px-10">
+                <div class=" flex flex-col gap-10 mb-20">
+                    <img class="object-cover h-full w-full" src="./assets/images/R1_first_pic.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R1_Sec_pic.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R1_three_pic.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R2_1PIC.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R2_2PIC.jpg" alt="">
+                </div>
+                <div class=" flex flex-col gap-10 mt-20">
+                    <img class="object-cover h-full w-full" src="./assets/images/R2_1PIC.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R2_2PIC.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R2_3PIC.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R3_2PIC.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R3_3PIC.jpg" alt="">
+                </div>
+                <div class=" flex flex-col gap-10 mb-20">
+                    <img class="object-cover h-full w-full" src="./assets/images/R3_1PIC.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R3_2PIC.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R3_3PIC.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R1_Sec_pic.jpg" alt="">
+                    <img class="object-cover h-full w-full" src="./assets/images/R1_three_pic.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h1 class="text-3xl font-bold md:text-5xl pb-5 md:pb-8">Home</h1>
+            
+            <div class="flex gap-5">
+                <div class="bg-gray-50 flex flex-col items-center px-4 md:px-10 gap-4 hover:gap-5 md:gap-10 md:hover:gap-12 aspect-[5/4] overflow-hidden">
+                    <h1 class="py-2 md:py-10 font-bold text-xl">Grid I</h1>
+                    <img src="./assets/images/Grid1.jpg" alt="">
+                </div>
+                <div class="bg-gray-50 flex flex-col items-center px-4 md:px-10 gap-4 hover:gap-5 md:gap-10 md:hover:gap-12 aspect-[5/4] overflow-hidden">
+                    <h1 class="py-2 md:py-10 font-bold text-xl">Grid II</h1>
+                    <img src="./assets/images/Grid2.jpg" alt="">
+                </div>
+                <div class="bg-gray-50 flex flex-col items-center px-4 md:px-10 gap-4 hover:gap-5 md:gap-10 md:hover:gap-12 aspect-[5/4] overflow-hidden">
+                    <h1 class="py-2 md:py-10 font-bold text-xl">Grid III</h1>
+                    <img src="./assets/images/Grid3.jpg" alt="">
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

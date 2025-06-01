@@ -1,0 +1,9 @@
+ let a = 3
+ let b = 4
+ let c= 5
+ 
+ if (a+b > c && b+c >a && c+a > b) {
+        const s = (a + b + c)/2;
+        console.log((Math.sqrt(s*(s-a)*(s-b)*(s-c))).toFixed(2))
+    }
+    else console.log('invalid triangle')
