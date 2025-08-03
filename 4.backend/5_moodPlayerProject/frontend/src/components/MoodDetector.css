@@ -1,0 +1,77 @@
+.mood-detector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 20px;
+  color: #333;
+}
+
+.loading-message {
+  min-height: 1.5em; /* Prevents layout shift when text changes */
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.video-container {
+  position: relative;
+  width: clamp(320px, 80vw, 640px);
+  aspect-ratio: 640 / 480;
+  border: 3px solid #4CAF50;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #000;
+}
+
+.video-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.start-camera-button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.start-camera-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
+}
+
+.start-camera-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.mood-result {
+  margin-top: 25px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.mood-text {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 8px;
+  background-color: #e8f5e9;
+  color: #4CAF50;
+  text-transform: capitalize;
+  min-width: 120px; /* Gives a consistent size */
+}
