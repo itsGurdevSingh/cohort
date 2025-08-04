@@ -1,0 +1,88 @@
+/* ===== src/components/RecommendedTracks.css ===== */
+.recommended-tracks {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* Make the component a flex container to control its children's layout */
+  display: flex;
+  flex-direction: column;
+  /* This is crucial: prevent the component from growing beyond its container */
+  overflow: hidden;
+}
+
+.recommended-tracks h2 {
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+  /* The header should not shrink */
+  flex-shrink: 0;
+}
+
+.no-tracks-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--text-color);
+  text-align: center;
+  border: 2px dashed var(--medium-gray);
+  border-radius: 8px;
+}
+
+.track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* This makes the list scrollable if it overflows */
+  overflow-y: auto;
+  /* Hide the scrollbar for a cleaner look */
+  scrollbar-width: none; /* For Firefox */
+}
+
+/* For Chrome, Safari, and Opera */
+.track-list::-webkit-scrollbar {
+  display: none;
+}
+
+.track-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.track-item:hover {
+  background-color: var(--light-gray);
+}
+
+.track-item.active {
+  background-color: #e8e1f5;
+  color: var(--primary-color);
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-title {
+  font-weight: 600;
+}
+
+.track-artist {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.play-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0; /* Prevent the button from shrinking */
+}

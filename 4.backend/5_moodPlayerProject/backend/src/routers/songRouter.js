@@ -35,5 +35,22 @@ router.post('/', upload.single("audio"), async (req, res) => {
         res.status(500).send({ message: "Failed to upload audio", error: err.message });
     }
 });
+router.get('/:mood', async (req, res) => {
+  try {
+     const mood = req.params.mood.toUpperCase();
+
+    const songs = await SongModel.find({ mood: mood });
+    if (songs.length === 0) {
+      return res.status(404).json({ message: `No songs found for the mood: ${mood}` });
+    }
+
+    res.status(200).json(songs);
+
+  } catch (error) {
+    
+    console.error('Error fetching songs by mood:', error);
+    res.status(500).json({ message: 'Server error, please try again later.' });
+  }
+});
 
 module.exports = router;
