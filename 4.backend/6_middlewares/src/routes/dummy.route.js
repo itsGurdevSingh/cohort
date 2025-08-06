@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     res.status(200).json({ 
         msg: req.body.msg,
         message: req.middlewareMsg 
-    }); // ✅ only send what's serializable
+    });
 
 });
 
