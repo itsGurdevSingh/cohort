@@ -2,6 +2,8 @@ require("dotenv").config()
 const router = require("express").Router()
 const userModel = require("../models/user.model.js")
 const jwt = require("jsonwebtoken")
+const bcrypt = require("bcrypt");
+
 
 router.post('/register',async(req,res)=>{
     const {username,age,info ,password}=req.body
@@ -10,7 +12,9 @@ router.post('/register',async(req,res)=>{
 
     if(isUser) res.send("user already exists")
 
-    const user = await userModel.create({username,age,info,password})
+    const hashedPassword = await bcrypt.hash(password,10)
+
+    const user = await userModel.create({username,age,info,password:hashedPassword})
 
     const token = jwt.sign(id = user.id,process.env.JWT_SECRET_KEY)
 
@@ -34,9 +38,11 @@ router.post('/login', async(req,res)=>{
 
     const user = await userModel.findOne({username})
 
-    if(!user) res.send(" invalid username or password ...")
+    if(!user) return res.send(" invalid username or password ...")
 
-    if(password !== user.password) res.send("invalid username or password..")
+    isPasswordMatch = await bcrypt.compare(password,user.password)
+
+    if(!isPasswordMatch) return res.send("invalid username or password..")
 
     const token = jwt.sign(id = user.id, process.env.JWT_SECRET_KEY)
     
