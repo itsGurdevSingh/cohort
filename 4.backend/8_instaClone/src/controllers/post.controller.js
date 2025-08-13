@@ -1,12 +1,19 @@
 const uploadToImagekit = require("../service/storage.service");
+const getCaption = require("../service/genAi.service");
 const userModel = require("../models/user.model");
 const postModel = require("../models/post.model");
 
 const createPost = async (req, res) => {
     try {
         const image = req.file;
-        const { description } = req.body;
+        let { caption } = req.body;
         const userId = req.userId;
+
+        if(!caption){ 
+            const base64Image = Buffer.from(image.buffer).toString('base64');
+            caption = await getCaption(base64Image)
+        }
+
 
         if (!image) {
             return res.status(400).send("Image is required");
@@ -17,7 +24,7 @@ const createPost = async (req, res) => {
         const post = await postModel.create({
             type: 'image',
             post: uploadedPost.url,
-            description,
+            caption,
             userId
         });
 

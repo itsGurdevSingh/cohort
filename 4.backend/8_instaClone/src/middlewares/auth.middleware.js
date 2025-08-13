@@ -14,7 +14,7 @@ const isLoggedIn = (req, res, next) => {
       return res.status(401).send("Invalid or expired token.");
     }
 
-    req.userId = decoded;
+    req.userId = decoded.id;
     next();
   } catch (err) {
     console.error("Auth error:", err.message);
