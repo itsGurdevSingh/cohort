@@ -5,15 +5,29 @@ const generateResponse = require("./src/services/aiTextGen.js")
 
 const httpServer = createServer(app)
 
-const io = new Server(httpServer)
+const io = new Server(httpServer,{
+    cors:"http://localhost:5173/"
+})
+
+const chatHistory = [];
+
 
 io.on("connection",(socket)=>{
     console.log("socket is connected yoo")
 
     socket.on("msg",async msg=> {
-        console.log("msg : ",msg)
 
-        const response = await generateResponse(msg)
+        chatHistory.push({
+            role:'user',
+            parts:[{text:msg}]
+        })
+
+        const response = await generateResponse(chatHistory)
+
+        chatHistory.push({
+            role:'model',
+            parts:[{text:response}]
+        })
 
         socket.emit("res", response)
     })
