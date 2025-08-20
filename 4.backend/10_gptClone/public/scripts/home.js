@@ -25,6 +25,10 @@ const currentTime = ()=>{
     return time;
 }
 
+const genResponse = (input) => {
+    socket.emit('user-msg',input)
+}
+
 sendBtn.addEventListener('click',()=>{
     const msg ={
         role:'user',
@@ -33,8 +37,20 @@ sendBtn.addEventListener('click',()=>{
     }
 
     createMsg(msg)
+
+    genResponse(input.value)
+
     input.value = '';
 
+})
+
+socket.on('bot-msg',(res)=>{
+    const msg = {
+        role:'bot',
+        contant:res,
+        timestamp:currentTime()
+    }
+    createMsg(msg)
 })
 
 
