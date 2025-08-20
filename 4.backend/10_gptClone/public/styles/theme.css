@@ -1,0 +1,40 @@
+/* ================================
+THEME VARIABLES - ChatGPT Clone
+================================ */
+:root {
+  /* Font */
+  --font-family-primary: 'Inter', sans-serif;
+
+  /* Core Colors */
+  --primary-color: #6a5af9;       /* Vibrant purple */
+  --primary-color-hover: #5a4bf8; /* Darker hover */
+  --secondary-color: #f0f2f5;
+  --bg-color: #f8f9fa;
+  --text-color: #343a40;
+  --text-color-light: #6c757d;
+
+  /* ChatGPT Clone Theme */
+  --gpt-bg: #343541;
+  --gpt-sidebar-bg: #202123;
+  --gpt-header-bg: #494c56;
+  --gpt-input-bg: #40414f;
+  --gpt-text-primary: #ffffff;
+  --gpt-text-secondary: #acacbe;
+  --gpt-border: rgba(255, 255, 255, 0.2);
+  --gpt-card-bg: #3e3f4b;
+  --gpt-card-hover-bg: #4e4f5a;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+
+  /* Transition */
+  --transition-speed: 0.2s;
+}

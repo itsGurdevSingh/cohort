@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Clone</title>
+    <!-- Link to the theme file -->
+    <link rel="stylesheet" href="/styles/theme.css">
+    <!-- Link to the home page stylesheet -->
+    <link rel="stylesheet" href="/styles/home.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons (Feather Icons) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn">
+                    <i data-feather="plus"></i> New Chat
+                </button>
+            </div>
+            <nav class="chat-history">
+                <ul>
+                    <li><a href="#"><i data-feather="message-square"></i><span>Introduction to Quantum...</span></a></li>
+                    <li><a href="#"><i data-feather="message-square"></i><span>Recipe for a perfect pizza...</span></a></li>
+                    <li><a href="#"><i data-feather="message-square"></i><span>Travel itinerary for Japan</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="user-profile">
+                    <div class="avatar">U</div>
+                    <span>User</span>
+                </a>
+                <button class="settings-btn"><i data-feather="more-horizontal"></i></button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Content -->
+        <main class="main-content">
+            <div class="header">  gpt clone</div>
+            <div class="welcome-view">
+                <div class="logo">
+                    <span>GPT</span>
+                </div>
+                <h1>How can I help you today?</h1>
+
+                <div class="suggestion-cards">
+                    <div class="card">
+                        <h3>Write a story</h3>
+                        <p>about a robot who discovers music</p>
+                    </div>
+                    <div class="card">
+                        <h3>Explain a concept</h3>
+                        <p>like quantum entanglement in simple terms</p>
+                    </div>
+                    <div class="card">
+                        <h3>Draft an email</h3>
+                        <p>to request a deadline extension</p>
+                    </div>
+                    <div class="card">
+                        <h3>Suggest some names</h3>
+                        <p>for a new coffee shop</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-view">
+                <div class="user-msg">
+                    <div class="msg-contant">hello</div>
+                    <div class="timestamp">09:20pm</div>
+                </div>
+
+                <div class="bot-msg">
+                    <div class="msg-contant">hy how can i help you </div>
+                    <div class="timestamp">09:21pm</div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <input class="input" type="text" placeholder="Message ChatGPT...">
+                    <button class="send-btn"><i data-feather="arrow-up"></i></button>
+                </div>
+                <p class="disclaimer">ChatGPT can make mistakes. Consider checking important information.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" 
+            integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+" 
+            crossorigin="anonymous">
+    </script>
+
+    <script src="/scripts/home.js"></script>
+    <script>
+        const socket = socket.io();
+    </script>
+</body>
+</html>

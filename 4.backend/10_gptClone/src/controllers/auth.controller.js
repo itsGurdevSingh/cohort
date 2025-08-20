@@ -9,11 +9,15 @@ const getRegisterPage = (req, res) => {
 const registerUser = async (req, res) => {
 
     try {
+
+        console.log(req.body)
         const { username, email, password } = req.body;
 
         const isUserExist = await userModel.findOne({ $or: [{ username }, { email }] });
 
-        if (isUserExist) res.send('user alreay exist')
+        if (isUserExist) {console.log('user alreay exist')
+            return res.redirect('/auth/register')
+        }
 
         const hashedPassword = await bcrypt.hash(password, 10)
 
@@ -21,11 +25,11 @@ const registerUser = async (req, res) => {
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY)
 
-        res.status(201).cookie('auth', token).send(user)
+        res.status(201).cookie('auth', token).redirect('/')
 
     } catch (error) {
-        console.log(error.message);
-        res.send('error in creating user')
+        console.log('error in creating user',error.message);
+        res.redirect('/auth/register')
     }
 
 }
@@ -38,7 +42,8 @@ const userLogin = async (req, res) => {
         const { identifier, password } = req.body;
 
         if (!identifier || !password) {
-            return res.status(400).json({ message: "Identifier and password required" });
+            console.log("Identifier and password required")
+            return res.status(400).redirect('/auth/login');
         }
 
         // Check if identifier looks like an email
@@ -49,12 +54,14 @@ const userLogin = async (req, res) => {
         const user = await userModel.findOne(query);
 
         if (!user) {
-            return res.status(404).json({ message: "User not found" });
+            console.log("User not found")
+            return res.status(404).redirect('/auth/login');
         }
 
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
-            return res.status(401).json({ message: "Invalid credentials" });
+            console.log("Invalid credentials")
+            return res.status(401).redirect('/auth/login');
         }
 
         const token = jwt.sign(
@@ -65,11 +72,11 @@ const userLogin = async (req, res) => {
         res
             .status(200)
             .cookie("auth", token,)
-            .json({ message: "Login successful", user: { id: user._id, username: user.username, email: user.email } });
+            .redirect('/');
 
     } catch (error) {
         console.error(error.message);
-        res.status(500).json({ message: "Server error" });
+        res.status(500).redirect('/auth/login');
     }
 };
 

@@ -1,0 +1,157 @@
+/* ================================
+MAIN STYLES - Authentication Pages
+================================
+This file styles the login and registration pages using variables from theme.css.
+*/
+
+/* --- General Body & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--spacing-md);
+}
+
+/* --- Auth Container (for login/register) --- */
+.auth-container, .register-container {
+    background-color: var(--container-bg);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.auth-form, .register-form {
+    /* This group doesn't need specific styles, but selector is kept for structure */
+}
+
+.auth-form h2, .register-form h2 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.auth-form .subtitle, .register-form .subtitle {
+    color: var(--text-color-light);
+    margin-bottom: var(--spacing-lg);
+    font-size: 16px;
+}
+
+/* --- Input Fields & Labels --- */
+.input-group {
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+    position: relative; /* Needed for error message positioning */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    font-size: 16px;
+    font-family: var(--font-family-primary);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.input-group input::placeholder {
+    color: var(--text-color-light);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(106, 90, 249, 0.2);
+}
+
+/* --- Validation Styling --- */
+/* Add a red border and shadow to invalid fields that the user has interacted with */
+.input-group input:invalid:not(:placeholder-shown) {
+    border-color: var(--error-color);
+}
+
+.input-group input:invalid:not(:placeholder-shown):focus {
+     box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2);
+}
+
+/* --- Error Message Styling (optional, for JS enhancement) --- */
+.error-message {
+    color: var(--error-color);
+    font-size: 12px;
+    padding-top: var(--spacing-xs);
+    display: block;
+    min-height: 18px; /* Prevents layout shift when message appears */
+}
+
+
+/* --- Button --- */
+.auth-btn, .register-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    margin-top: var(--spacing-sm);
+}
+
+.auth-btn:hover, .register-btn:hover {
+    background-color: var(--primary-color-hover);
+}
+
+/* --- Form Link (for switching between login/register) --- */
+.form-link, .login-link {
+    margin-top: var(--spacing-lg);
+    font-size: 14px;
+}
+
+.form-link a, .login-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+RESPONSIVE DESIGN
+================================
+*/
+@media (max-width: 480px) {
+    .auth-container, .register-container {
+        padding: var(--spacing-lg);
+    }
+
+    .auth-form h2, .register-form h2 {
+        font-size: 24px;
+    }
+
+    .auth-form .subtitle, .register-form .subtitle {
+        font-size: 14px;
+    }
+}
