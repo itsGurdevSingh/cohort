@@ -1,7 +1,7 @@
-const {server} = require('socket.io')
+const {Server} = require('socket.io')
 
 const setupSocketServer = (httpServer) =>{
-    const io = new server(httpServer)
+    const io = new Server(httpServer)
 
     io.on('connection',()=>{
         console.log('yoo socket is connected')

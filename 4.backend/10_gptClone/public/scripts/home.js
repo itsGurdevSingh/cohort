@@ -2,6 +2,8 @@ const chatArea = document.querySelector('.chat-view')
 const sendBtn = document.querySelector('.send-btn')
 const input = document.querySelector('.input')
 
+const socket = io();
+
 
 const createMsg = (msg)=>{
 
@@ -32,8 +34,6 @@ sendBtn.addEventListener('click',()=>{
 
     createMsg(msg)
     input.value = '';
-
-    
 
 })
 
