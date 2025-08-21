@@ -1,8 +1,11 @@
 const chatArea = document.querySelector('.chat-view')
+const welcomeView = document.querySelector('.welcome-view')
 const sendBtn = document.querySelector('.send-btn')
 const input = document.querySelector('.input')
 
 const socket = io();
+
+let ischatEmpty = true;
 
 
 const createMsg = (msg)=>{
@@ -34,6 +37,12 @@ sendBtn.addEventListener('click',()=>{
         role:'user',
         contant:input.value,
         timestamp:currentTime()
+    }
+
+    if(ischatEmpty) {
+        welcomeView.style.display = 'none';
+        chatArea.style.display = 'flex';
+        ischatEmpty = false;
     }
 
     createMsg(msg)

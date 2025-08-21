@@ -138,13 +138,84 @@ body {
 
 /* Hide welcome screen */
 .welcome-view {
-  display: none ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 120px); /* adjust based on header/footer height */
+    text-align: center;
+    padding: 2rem;
+    color: var(--gpt-text-primary, #ececec);
 }
+
+/* Logo styling */
+.welcome-view .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gpt-accent, #10a37f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Main heading */
+.welcome-view h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* Suggestion cards grid */
+.suggestion-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Individual card */
+.suggestion-cards .card {
+    background: var(--gpt-card-bg, #1e1f23);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.suggestion-cards .card:hover {
+    background: var(--gpt-hover, #2a2b30);
+    transform: translateY(-2px);
+}
+
+/* Card title */
+.suggestion-cards .card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--gpt-text-primary, #fff);
+}
+
+/* Card text */
+.suggestion-cards .card p {
+    font-size: 0.9rem;
+    color: var(--gpt-text-secondary, #aaa);
+    line-height: 1.4;
+}
+
 
 /* --- Chat View --- */
 .chat-view {
   flex-grow: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 12px;
   padding: var(--spacing-lg);
