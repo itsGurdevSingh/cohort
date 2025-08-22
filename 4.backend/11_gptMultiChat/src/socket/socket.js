@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const cookie = require('cookie');
 const {Server} = require('socket.io');
 const userModel = require('../models/user.model');
+const genTextRes = require('../services/textGen.service');
 
 const isUserLogedIn = async (socket,next)=>{
     const cookies = cookie.parse(socket.handshake.headers?.cookie || '');
@@ -34,9 +35,16 @@ const setUpSocket = (httpServer) =>{
     io.use(isUserLogedIn)
     io.on('connection',(socket)=>{
         console.log('yoo socket is connected by : \n\n ',socket.user)
+
+        socket.on('user-msg',async(input)=>{
+            console.log('input msg is : ',input)
+            const res = await genTextRes(input)
+
+            socket.emit('ai-res',res)
+        })
     })
 
-    
+
 }
 
 module.exports = setUpSocket;
