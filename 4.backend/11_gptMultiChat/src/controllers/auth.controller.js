@@ -37,14 +37,14 @@ const loginUser = async(req,res) => {
 
     const query = identifier.includes('@')?{email:identifier}:{username:identifier};
 
-    const user = await userModel.findOne({query})
+    const user = await userModel.findOne(query)
 
     if (!user){
         console.log('user not found');
         return res.status(400).json({error:'user not found'})
     }
 
-    const isValidPassword = bcrypt.compare(password,user._id)
+    const isValidPassword = bcrypt.compare(password,user.password)
 
     if(!isValidPassword){ 
         console.log('Invalid credentials')

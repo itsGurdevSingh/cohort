@@ -3,6 +3,7 @@ const cors = require('cors');
 const express = require('express');
 
 const authRouter = require('./routers/auth.router')
+const chatRouter = require('./routers/chat.router')
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(cookieParser());
 
 app.use('/auth',authRouter)
+app.use('/chat',chatRouter)
 
 module.exports = app;
 
