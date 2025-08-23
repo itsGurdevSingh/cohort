@@ -3,8 +3,9 @@ const jwt = require('jsonwebtoken');
 const cookie = require('cookie');
 const { Server } = require('socket.io');
 const userModel = require('../models/user.model');
-const genTextRes = require('../services/textGen.service');
+const { genTextRes, genEmbedding } = require('../services/genAi.service');
 const messageModel = require('../models/message.model');
+const { createMemory, queryMemory } = require('../services/vectorDb.service');
 
 const isUserLogedIn = async (socket, next) => {
     const cookies = cookie.parse(socket.handshake.headers?.cookie || '');
@@ -42,13 +43,40 @@ const setUpSocket = (httpServer) => {
             const userId = socket.user._id;
             const { chatId, content } = messagePayload;
 
+            const vector = await genEmbedding(content);
+            
+            const vectorMemory = await queryMemory({
+                queryVector:vector,
+                limit:10,
+                metadata:{}
+            })
+
             const userMsg = await messageModel.create({ userId, chatId, role: 'user', content })
 
+            await createMemory({
+                memoryId: userMsg._id,
+                vector: vector,
+                metadata: {
+                    chatId: chatId,
+                    userId: userId,
+                    content: content
+                }
+            })
+
+
+            const longTermMemory = [{
+                role:'user',
+                parts:[{
+                    text:`Here is some relevant context from our past conversations:\n\n
+                          ${vectorMemory.map(item => item.metadata?.content).join('\n')}`
+                }]
+            }]
+
             const shortTermMemory = await messageModel
-                .find({ chatId })                  
-                .sort({ createdAt: -1 })           
-                .limit(5)                          
-                .lean();                           
+                .find({ chatId })
+                .sort({ createdAt: -1 })
+                .limit(10)
+                .lean();
 
             // Reverse to oldest → newest, then map
             const formatted = shortTermMemory.reverse().map(msg => ({
@@ -56,9 +84,24 @@ const setUpSocket = (httpServer) => {
                 parts: [{ text: msg.content }]
             }));
 
-            const res = await genTextRes(formatted)
+            const fullContext = [...longTermMemory,...formatted]
+
+            const res = await genTextRes(fullContext)
 
             const modelMsg = await messageModel.create({ userId, chatId, role: 'model', content: res })
+
+            const resVector = await genEmbedding(res);
+
+
+            await createMemory({
+                memoryId: modelMsg._id,
+                vector: resVector,
+                metadata: {
+                    chatId: chatId,
+                    userId: userId,
+                    content: res
+                }
+            })
 
 
             socket.emit('ai-res', res)

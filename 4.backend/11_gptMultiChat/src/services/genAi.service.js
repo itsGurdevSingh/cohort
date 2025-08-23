@@ -31,14 +31,30 @@ Key Directives:
 `.trim();
 
 const genTextRes = async (input) => {
-    const response = await ai.models.generateContent({
+  const response = await ai.models.generateContent({
     model: "gemini-2.0-flash",
     contents: input,
-     config: {
+    config: {
       systemInstruction: systemInstructionText
     },
   });
-     return response.text;
+  return response.text;
 }
 
-module.exports = genTextRes;
+const genEmbedding = async (input) => {
+  const response = await ai.models.embedContent({
+    model: 'gemini-embedding-001',
+    contents: input,
+    config:{
+      outputDimensionality: 768,
+    }
+    
+  });
+
+  return response.embeddings[0].values
+}
+
+module.exports = {
+  genTextRes,
+  genEmbedding
+};
