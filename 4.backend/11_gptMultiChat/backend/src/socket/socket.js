@@ -12,7 +12,7 @@ const isUserLogedIn = async (socket, next) => {
     const token = cookies.authToken
 
     if (!token) {
-        next(new Error('authentication Error : login again'));
+        return next(new Error('authentication Error : login again'));
     }
 
     try {
@@ -43,15 +43,24 @@ const setUpSocket = (httpServer) => {
             const userId = socket.user._id;
             const { chatId, content } = messagePayload;
 
-            const vector = await genEmbedding(content);
-            
-            const vectorMemory = await queryMemory({
-                queryVector:vector,
-                limit:10,
-                metadata:{}
-            })
+            const [vector, userMsg] = await Promise.all([
+                genEmbedding(content),
+                messageModel.create({ userId, chatId, role: 'user', content })
+            ])
 
-            const userMsg = await messageModel.create({ userId, chatId, role: 'user', content })
+            const [vectorMemory, shortTermMemory] = await Promise.all([
+                queryMemory({
+                    queryVector: vector,
+                    limit: 10,
+                    metadata: { userId: userId }
+                }),
+                messageModel
+                    .find({ chatId })
+                    .sort({ createdAt: -1 })
+                    .limit(10)
+                    .lean()
+
+            ])
 
             await createMemory({
                 memoryId: userMsg._id,
@@ -65,33 +74,29 @@ const setUpSocket = (httpServer) => {
 
 
             const longTermMemory = [{
-                role:'user',
-                parts:[{
-                    text:`Here is some relevant context from our past conversations:\n\n
+                role: 'user',
+                parts: [{
+                    text: `Here is some relevant context from our past conversations:\n\n
                           ${vectorMemory.map(item => item.metadata?.content).join('\n')}`
                 }]
             }]
 
-            const shortTermMemory = await messageModel
-                .find({ chatId })
-                .sort({ createdAt: -1 })
-                .limit(10)
-                .lean();
-
             // Reverse to oldest → newest, then map
-            const formatted = shortTermMemory.reverse().map(msg => ({
+            const formattedSTL = shortTermMemory.reverse().map(msg => ({
                 role: msg.role,
                 parts: [{ text: msg.content }]
             }));
 
-            const fullContext = [...longTermMemory,...formatted]
+            const fullContext = [...longTermMemory, ...formattedSTL]
 
             const res = await genTextRes(fullContext)
+            
+            socket.emit('ai-res', res)
 
-            const modelMsg = await messageModel.create({ userId, chatId, role: 'model', content: res })
-
-            const resVector = await genEmbedding(res);
-
+            const [modelMsg, resVector] = await Promise.all([
+                messageModel.create({ userId, chatId, role: 'model', content: res }),
+                genEmbedding(res)
+            ])
 
             await createMemory({
                 memoryId: modelMsg._id,
@@ -102,9 +107,7 @@ const setUpSocket = (httpServer) => {
                     content: res
                 }
             })
-
-
-            socket.emit('ai-res', res)
+            
         })
     })
 
