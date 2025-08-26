@@ -16,6 +16,13 @@ app.use(cookieParser());
 app.use('/auth',authRouter)
 app.use('/chat',chatRouter)
 
+app.get('/message',(req,res) =>{
+    console.log('api hits')
+    res.json({
+        msg:'api works sucessfully'
+    })
+})
+
 module.exports = app;
 
 

@@ -5,6 +5,8 @@ const bcrypt = require('bcrypt');
 
 const registerUser = async (req,res) => {
 
+    console.log(req.body)
+
     const {username,firstName,lastName,email,password} = req.body;
 
     const isUserExist = await userModel.findOne({
@@ -22,7 +24,14 @@ const registerUser = async (req,res) => {
     const token = jwt.sign({id:user._id},process.env.JWT_SECRET_KEY)
 
     res.status(201).cookie("authToken",token).json({
-        message:'user registered sucessfuly'
+        message:'user registered sucessfuly',
+        user:{
+            _id:user._id,
+            username:user.username,
+            firstName:user.fullName?.firstName,
+            lastName:user.fullName?.lastName,
+            email:user.email,
+        }
     })
 
 }
@@ -53,11 +62,36 @@ const loginUser = async(req,res) => {
 
     const token = jwt.sign({id:user._id},process.env.JWT_SECRET_KEY);
 
-    res.status(200).cookie('authToken',token).json({message:'login sucessfull'})
+    res.status(200).cookie('authToken',token).json({
+        message:'login sucessfull',
+        user:{
+            _id:user._id,
+            username:user.username,
+            firstName:user.fullName?.firstName,
+            lastName:user.fullName?.lastName,
+            email:user.email,
+        }
+    })
+}
+const verifySession = async(req,res) => {
+    const user = req.user;
+    if(!user) res.status(400).json({message:'please login session faild to verify'})
+
+    res.status(200).json({
+        message:'User session verified',
+        user:{
+            _id:user._id,
+            username:user.username,
+            firstName:user.fullName?.firstName,
+            lastName:user.fullName?.lastName,
+            email:user.email,
+        }
+    })
 }
 
 
 module.exports ={
     registerUser,
-    loginUser
+    loginUser,
+    verifySession
 }
