@@ -8,6 +8,6 @@ router.post('/register',registerUser);
 
 router.post('/login',loginUser);
 
-router.post('/verify',isUserLogedIn,verifySession);
+router.get('/verify',isUserLogedIn,verifySession);
 
 module.exports = router;

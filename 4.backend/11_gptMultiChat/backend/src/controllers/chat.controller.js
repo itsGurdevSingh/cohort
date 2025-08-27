@@ -14,6 +14,26 @@ const createChat = async (req, res) => {
 
 }
 
+const getChats = async (req, res) => {
+  const user = req.user;
+
+  try {
+    const chats = await chatModel
+      .find({ user: user._id })
+      .select("title createdAt") // include fields you want
+      .sort({ createdAt: -1 });  // sort newest first
+
+    res.status(200).json({ chats });
+  } catch (error) {
+    res.status(500).json({
+      message: "Failed to get chats",
+      error: error.message,
+    });
+  }
+};
+
+
 module.exports = {
-    createChat
+    createChat,
+    getChats
 }
