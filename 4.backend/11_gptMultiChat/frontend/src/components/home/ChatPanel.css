@@ -1,0 +1,92 @@
+:root {
+  --user-bg: #007bff;       /* Blue for user */
+  --model-bg: #3a3a3a;      /* Dark gray for model */
+  --text-light: #ffffff;    /* White text */
+  --timestamp-color: #b0b0b0; /* Lighter gray for timestamp */
+}
+
+.chat-panel {
+  background: #505050;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.titlebar {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: large;
+  padding: 0.5rem;
+  background: #242424;
+}
+
+.chat-wrapers {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;              /* space between messages */
+  background: #0000005f;
+  padding: 1rem 5rem;
+  overflow-y: auto;         /* scroll when messages overflow */
+}
+.input-bar {
+  background: #242424;
+  padding: 1rem 5rem;
+  display: flex;
+  gap: .5rem;
+  justify-content: space-between;
+}
+
+.input-bar input{
+    flex: 1;
+    border-radius: 2rem;
+    padding: 0 1rem;
+}
+
+.input-bar button{
+    padding: .5rem 1.5rem;
+    border-radius: 2rem;
+    background: var(--user-bg);;
+    font-size: medium;
+    text-transform: capitalize;
+}
+
+.user, .model {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;        /* Bubble won’t stretch too wide */
+  margin: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  word-wrap: break-word;
+}
+
+.user {
+  align-self: flex-end;      /* Push to right */
+  background: var(--user-bg);
+  color: var(--text-light);
+  border-bottom-right-radius: 0.2rem; /* Chat bubble corner */
+}
+
+.model {
+  align-self: flex-start;    /* Push to left */
+  background: var(--model-bg);
+  color: var(--text-light);
+  border-bottom-left-radius: 0.2rem;
+}
+
+.msg-content {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.msg-timestamp {
+  font-size: 0.75rem;
+  color: var(--timestamp-color);
+  margin-top: 0.25rem;
+  text-align: right;
+}
+

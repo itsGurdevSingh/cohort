@@ -1,0 +1,15 @@
+.homePage{
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar-wraper{
+    width: 20%;
+    height: 100vh;
+}
+
+.chat-panel-wraper{
+    width: 80%;
+}
