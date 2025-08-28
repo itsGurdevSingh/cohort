@@ -32,7 +32,12 @@ const isUserLogedIn = async (socket, next) => {
 }
 
 const setUpSocket = (httpServer) => {
-    const io = new Server(httpServer, {});
+    const io = new Server(httpServer, {
+        cors:{
+            origin:'http://localhost:5173',
+            credentials:true
+        },
+    });
 
     io.use(isUserLogedIn)
     io.on('connection', (socket) => {
@@ -40,7 +45,7 @@ const setUpSocket = (httpServer) => {
 
         socket.on('user-msg', async (messagePayload) => {
 
-            const userId = socket.user._id;
+            const userId = socket.user?._id;
             const { chatId, content } = messagePayload;
 
             const [vector, userMsg] = await Promise.all([

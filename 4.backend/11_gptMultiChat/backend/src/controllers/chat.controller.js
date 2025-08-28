@@ -1,4 +1,5 @@
 const chatModel = require("../models/chat.model")
+const messageModel = require("../models/message.model")
 
 const createChat = async (req, res) => {
     const title = req.body.title || ''
@@ -26,7 +27,24 @@ const getChats = async (req, res) => {
     res.status(200).json({ chats });
   } catch (error) {
     res.status(500).json({
-      message: "Failed to get chats",
+      message: "Failed to get chats.",
+      error: error.message,
+    });
+  }
+};
+const getConversation = async (req, res) => {
+  const chatId = req.params.id;
+
+  try {
+  const conversation = await messageModel
+      .find({ chatId})
+      .select("role content createdAt") 
+      .sort({ createdAt: 1 })
+
+    res.status(200).json({ conversation });
+  } catch (error) {
+    res.status(500).json({
+      message: "Failed to get conver sation ",
       error: error.message,
     });
   }
@@ -35,5 +53,6 @@ const getChats = async (req, res) => {
 
 module.exports = {
     createChat,
-    getChats
+    getChats,
+    getConversation
 }

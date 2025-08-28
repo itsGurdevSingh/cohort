@@ -8,10 +8,7 @@ export const registerUserAction = (userData) => async (dispatchEvent) => {
         dispatchEvent(setLoading(true))
 
         const res = await axios.post('/auth/register', userData, { withCredentials: true })
-
         const user = res.data?.user
-
-        localStorage.setItem('userId', user._id)
 
         dispatchEvent(loadUser(user))
     } catch (error) {
@@ -42,9 +39,6 @@ export const isUserLoginAction = () => async (dispatchEvent) => {
 
         dispatchEvent(setLoading(true))
         const res = await axios.get('/auth/verify', { withCredentials: true })
-
-        console.log('verify res :', res)
-
         const user = res.data?.user
 
         dispatchEvent(loadUser(user))

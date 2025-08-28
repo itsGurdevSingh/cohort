@@ -3,8 +3,8 @@ import ChatPanel from "../components/home/ChatPanel";
 import "./Home.css";
 import { useSelector } from "react-redux";
 
+
 const Home = () => {
-  const { isAuthenticated } = useSelector((state) => state.auth);
 
   return (
     <div className="homePage">

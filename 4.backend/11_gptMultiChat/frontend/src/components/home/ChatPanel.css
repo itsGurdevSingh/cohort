@@ -1,7 +1,7 @@
 :root {
-  --user-bg: #007bff;       /* Blue for user */
-  --model-bg: #3a3a3a;      /* Dark gray for model */
-  --text-light: #ffffff;    /* White text */
+  --user-bg: #007bff; /* Blue for user */
+  --model-bg: #3a3a3a; /* Dark gray for model */
+  --text-light: #ffffff; /* White text */
   --timestamp-color: #b0b0b0; /* Lighter gray for timestamp */
 }
 
@@ -27,37 +27,38 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;              /* space between messages */
+  gap: 0.5rem; /* space between messages */
   background: #0000005f;
   padding: 1rem 5rem;
-  overflow-y: auto;         /* scroll when messages overflow */
+  overflow-y: auto; /* scroll when messages overflow */
 }
 .input-bar {
   background: #242424;
   padding: 1rem 5rem;
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
   justify-content: space-between;
 }
 
-.input-bar input{
-    flex: 1;
-    border-radius: 2rem;
-    padding: 0 1rem;
+.input-bar input {
+  flex: 1;
+  border-radius: 2rem;
+  padding: 0 1rem;
 }
 
-.input-bar button{
-    padding: .5rem 1.5rem;
-    border-radius: 2rem;
-    background: var(--user-bg);;
-    font-size: medium;
-    text-transform: capitalize;
+.input-bar button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  background: var(--user-bg);
+  font-size: medium;
+  text-transform: capitalize;
 }
 
-.user, .model {
+.user,
+.model {
   display: flex;
   flex-direction: column;
-  max-width: 70%;        /* Bubble won’t stretch too wide */
+  max-width: 70%; /* Bubble won’t stretch too wide */
   margin: 0.5rem;
   padding: 0.5rem 0.75rem;
   border-radius: 1rem;
@@ -65,14 +66,14 @@
 }
 
 .user {
-  align-self: flex-end;      /* Push to right */
+  align-self: flex-end; /* Push to right */
   background: var(--user-bg);
   color: var(--text-light);
   border-bottom-right-radius: 0.2rem; /* Chat bubble corner */
 }
 
 .model {
-  align-self: flex-start;    /* Push to left */
+  align-self: flex-start; /* Push to left */
   background: var(--model-bg);
   color: var(--text-light);
   border-bottom-left-radius: 0.2rem;
@@ -90,3 +91,38 @@
   text-align: right;
 }
 
+.bot-msg.typing {
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.bot-msg.typing .dot {
+  width: 8px;
+  height: 8px;
+  background: #8b8b8b;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+}
+
+.bot-msg.typing .dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.bot-msg.typing .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bot-msg.typing .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
