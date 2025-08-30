@@ -48,6 +48,10 @@ const setUpSocket = (httpServer) => {
             const userId = socket.user?._id;
             const { chatId, content } = messagePayload;
 
+            if(!content) return socket.emit('ai-res', 'please enter a valid input ')
+
+
+
             const [vector, userMsg] = await Promise.all([
                 genEmbedding(content),
                 messageModel.create({ userId, chatId, role: 'user', content })

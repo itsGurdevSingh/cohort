@@ -24,6 +24,9 @@ const chatSlice = createSlice({
         setCurrentChat: (state, actions) => {
             state.activeChat = actions.payload;
         },
+        addChat:(state,actions) =>{
+            state.chats.unshift(actions.payload)
+        },
         setBotTyping:(state, actions) => {
             state.botTyping = actions.payload; // server res loding indicator  . 
         }
@@ -31,4 +34,4 @@ const chatSlice = createSlice({
 })
 
 export default chatSlice.reducer;
-export const { loadChats, setCurrentChat, loadConversation, addConversationMsgs,setBotTyping } = chatSlice.actions;
+export const { loadChats, addChat, setCurrentChat, loadConversation, addConversationMsgs,setBotTyping } = chatSlice.actions;

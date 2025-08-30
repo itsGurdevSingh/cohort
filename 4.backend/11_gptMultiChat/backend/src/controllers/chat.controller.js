@@ -2,12 +2,12 @@ const chatModel = require("../models/chat.model")
 const messageModel = require("../models/message.model")
 
 const createChat = async (req, res) => {
-    const title = req.body.title || ''
+    const title = req.body.title || 'untitled chat '
 
     try {
         const chat = await chatModel.create({ user: req.user._id, title })
 
-        res.status(201).json({ chatID: chat._id })
+        res.status(201).json({ _id: chat._id,title:chat.title,createdAt:chat.createdAt })
     } catch (error) {
         console.log(error)
         res.status(400).json({ msg: 'failed to create chat' })

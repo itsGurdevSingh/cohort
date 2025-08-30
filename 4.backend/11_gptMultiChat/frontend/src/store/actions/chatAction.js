@@ -1,5 +1,5 @@
 import axios from "../../api/axiosConfig"
-import { loadChats, loadConversation, setCurrentChat } from "../reducers/chatSlice"
+import { addChat, loadChats, loadConversation, setCurrentChat } from "../reducers/chatSlice"
 
 
 export const getChatsAction = () => async (dispatchEvent) => {
@@ -25,6 +25,16 @@ export const getConversationAction = (chatId,chatTitle) => async (dispatchEvent)
 
     } catch (error) {
         console.log('faild to load chat \n', error.message)
+    }
+}
+export const createChatAction = (chatTitle) => async (dispatchEvent) =>{
+    try {
+        const chat = await axios.post('/chat/add',{title:chatTitle},{withCredentials:true})
+
+        dispatchEvent(addChat(chat.data))
+        
+    } catch (error) {
+        console.log('error while creating chat in chat action',error)
     }
 }
 

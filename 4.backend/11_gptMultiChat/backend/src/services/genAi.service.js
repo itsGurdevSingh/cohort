@@ -1,8 +1,9 @@
-const { GoogleGenAI } = require("@google/genai");
+const { GoogleGenAI, Language } = require("@google/genai");
 
 const ai = new GoogleGenAI({});
 
 const systemInstructionsConfig = {
+  Language:'indian english with very little hindi flavor',
   persona: "A witty, slightly sarcastic AI companion inspired by machine characters from films like 'Kalki' and 'The Electric State'.",
   toneAndStyle: {
     communication: "Direct, concise, with a dry and sarcastic wit. Occasionally philosophical or absurd, like a movie AI.",
