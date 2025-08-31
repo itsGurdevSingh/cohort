@@ -29,8 +29,10 @@
 .sidebar-wraper {
   height: 100%;
   flex-basis: 20%;
-  max-width: 20%;
-  transition: flex-basis 0.5s ease, max-width 0.5s ease;
+  max-width: 300px;
+  width: fit-content;
+  min-width: 200px;
+  transition: flex-basis 0.5s ease, all 0.5s ease;
   overflow: hidden;
   background: var(--bg-primary);
   position: relative;
@@ -40,6 +42,7 @@
 .sidebar-wraper.closed {
   flex-basis: 0;
   max-width: 0;
+  min-width: 0;
 }
 
 .chat-panel-wraper {
@@ -48,4 +51,12 @@
   transition: width 0.5s ease;
   background: var(--card-bg);
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .sidebar-wraper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 }

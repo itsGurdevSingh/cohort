@@ -1,41 +1,27 @@
-import { useForm } from "react-hook-form";
 import "./ChatPanel.css";
+import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import socket from "../../socket";
 import { useEffect, useRef, useState } from "react";
-import {
-  addConversationMsgs,
-  setBotTyping,
-} from "../../store/reducers/chatSlice";
+import { addConversationMsgs, setBotTyping,} from "../../store/reducers/chatSlice";
 import { nanoid } from "nanoid";
-import { FaArrowDown, FaBars, FaPlus } from "react-icons/fa";
+import { FaArrowDown, FaBars } from "react-icons/fa";
 import { createChatAction } from "../../store/actions/chatAction";
 import { ToggleSidebarVisibility } from "../../store/reducers/uiSlice";
-
-const Msg = ({ msg }) => {
-  const { content, createdAt, role } = msg; // role = user || model
-  return (
-    <div className={role}>
-      <div className="msg-content">{content}</div>
-      <div className="msg-timestamp">
-        {new Date(createdAt).toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        })}
-      </div>
-    </div>
-  );
-};
+import MessageList from "../helper/messageList";
 
 const ChatPanel = () => {
-  const { register, reset, handleSubmit } = useForm();
+  const { register, reset, handleSubmit, watch } = useForm();
   const { conversation, activeChat, botTyping } = useSelector(
     (state) => state.chat
   );
-  const {sidebarVisibility} = useSelector(state => state.ui)
+  const { sidebarVisibility } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
   const chatWrapperRef = useRef(null);
   const [showScrollBtn, setShowScrollBtn] = useState(false);
+
+  // Watch input value
+  const contentValue = watch("content", "");
 
   const sendMessage = ({ content }) => {
     const msg = {
@@ -94,25 +80,26 @@ const ChatPanel = () => {
     }
   };
 
-   const createNewChat = () =>{
-      const chatName = prompt('enter name for chat')
-      dispatch(createChatAction(chatName))
-    }
+  const createNewChat = () => {
+    const chatName = prompt("enter name for chat");
+    dispatch(createChatAction(chatName));
+  };
 
-    const handleSidebar = () => {
-        console.log('handle clicked')
-        dispatch(ToggleSidebarVisibility())
-      }
+  const handleSidebar = () => {
+    console.log("handle clicked");
+    dispatch(ToggleSidebarVisibility());
+  };
 
   return (
     <div className="chat-panel">
-      <div className="titlebar" >
-      {!sidebarVisibility&&<FaBars onClick={handleSidebar}/>}
+      <div className={`titlebar ${sidebarVisibility ? "simple" : "options"}`}>
+        {!sidebarVisibility && <FaBars onClick={handleSidebar} />}
         <span>{activeChat?.chatTitle ? activeChat.chatTitle : "title"}</span>
-        {!sidebarVisibility&&<div className="newChat" onClick={createNewChat}>
-               <FaPlus />
-               <div>new chat</div>
-             </div>}
+        {!sidebarVisibility && (
+          <div className="newChatTitle" onClick={createNewChat}>
+            <div>new chat</div>
+          </div>
+        )}
       </div>
 
       <div
@@ -120,9 +107,7 @@ const ChatPanel = () => {
         ref={chatWrapperRef}
         onScroll={handleScroll}
       >
-        {conversation.map((msg) => (
-          <Msg key={msg._id} msg={msg} />
-        ))}
+       <MessageList messages={conversation} />
 
         {botTyping && (
           <li className="bot-msg typing">
@@ -142,10 +127,20 @@ const ChatPanel = () => {
       <form onSubmit={handleSubmit(sendMessage)} className="input-bar">
         <input
           {...register("content")}
+          required
           type="text"
           placeholder="Type a message..."
         />
-        <button type="submit">send</button>
+        <button
+          type="submit"
+          disabled={!contentValue.trim() || botTyping}
+          style={{
+            opacity: !contentValue.trim() || botTyping ? 0.5 : 1,
+            cursor: !contentValue.trim() || botTyping ? "not-allowed" : "pointer",
+          }}
+        >
+          send
+        </button>
       </form>
     </div>
   );
