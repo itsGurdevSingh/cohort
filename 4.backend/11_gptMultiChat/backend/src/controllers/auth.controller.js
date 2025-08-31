@@ -18,7 +18,7 @@ const registerUser = async (req, res) => {
     })
 
     if (isUserExist) {
-        return res.status(400).json({ message: 'user already exist with credentials' })
+        return res.status(400).json({ error: 'user already exist with credentials' })
     }
 
     const hashedPassword = await bcrypt.hash(password, 10)
@@ -45,7 +45,7 @@ const loginUser = async (req, res) => {
 
     if (!identifier, !password) {
         console.log("Identifier and password required")
-        return res.status(400).json({ error: 'feilds are not provided' })
+        return res.status(400).clearCookie('authToken',CookieOptions).json({ error: 'feilds are not provided' })
     }
 
     const query = identifier.includes('@') ? { email: identifier } : { username: identifier };
@@ -54,14 +54,14 @@ const loginUser = async (req, res) => {
 
     if (!user) {
         console.log('user not found');
-        return res.status(400).json({ error: 'user not found' })
+        return res.status(400).clearCookie('authToken',CookieOptions).json({ error: 'user not found' })
     }
 
-    const isValidPassword = bcrypt.compare(password, user.password)
+    const isValidPassword = await bcrypt.compare(password, user.password)
 
     if (!isValidPassword) {
         console.log('Invalid credentials')
-        return res.status(400).json({ error: 'Invalid credentials' })
+        return res.status(400).clearCookie('authToken',CookieOptions).json({ error: 'Invalid credentials' })
     }
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY);

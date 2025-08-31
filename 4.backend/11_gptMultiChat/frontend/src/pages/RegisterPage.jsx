@@ -1,13 +1,15 @@
 import "./RegisterPage.css";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerUserAction } from "../store/actions/authAction";
 
 const RegisterPage = () => {
   const { register, reset, handleSubmit } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {registerError} = useSelector(state => state.auth)
+
 
 
   const submitForm = (data) => {
@@ -54,6 +56,7 @@ const RegisterPage = () => {
           placeholder="Password"
           {...register("password", { required: true })}
         />
+        <div className="auth-error">{registerError}</div>
 
         <button type="submit" className="register-btn">
           Sign Up

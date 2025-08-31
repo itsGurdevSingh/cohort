@@ -19,3 +19,8 @@
   box-sizing: border-box;
 }
 
+.auth-error{
+  color: red;
+  font-size: small;
+}
+
